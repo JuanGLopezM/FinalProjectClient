@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 
 // We are deconstructing props object directly in the parentheses of the function
-function ProjectCard({ title, description, _id }) {
+function SubjectCard({ title, description, _id }) {
 	return (
 		<div className="ProjectCard card">
-			<Link to={`/projects/${_id}`}>
+			<Link to={`/subjects/${_id}`}>
 				<h3>{title}</h3>
 			</Link>
 			<p>id: {_id}</p>
@@ -13,4 +13,4 @@ function ProjectCard({ title, description, _id }) {
 	);
 }
 
-export default ProjectCard;
+export default SubjectCard;

@@ -1,16 +1,16 @@
 import service from './service';
 
-const URL = '/projects';
+const URL = '/subjects';
 
-const getAllProjectsService = () => {
+const getAllSubjectsService = () => {
 	return service.get(`${URL}/`);
 };
-const getProjectDetailsService = (id) => {
+const getSubjectDetailsService = (id) => {
 	return service.get(`${URL}/${id}`);
 };
 
-const addNewProjectService = (newProject) => {
-	return service.post(`${URL}/`, newProject);
+const addNewSubjectService = (newSubject) => {
+	return service.post(`${URL}/`, newSubject);
 };
 
-export { getAllProjectsService, addNewProjectService, getProjectDetailsService };
+export { getAllSubjectsService, addNewSubjectService, getSubjectDetailsService };
