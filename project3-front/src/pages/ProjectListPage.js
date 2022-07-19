@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
-import AddProject from './../components/AddProject';
-import ProjectCard from './../components/ProjectCard';
-import { getAllProjectsService } from '../services/project.services';
+import AddSubject from './../components/AddSubject';
+import SubjectCard from './../components/SubjectCard';
+import { getAllSubjectsService } from '../services/project.services';
 
-function ProjectListPage() {
-	const [ projects, setProjects ] = useState([]);
+function SubjectListPage() {
+	const [ subjects, setSubjects ] = useState([]);
 	const [ loading, setLoading ] = useState(true);
 
-	const getAllProjects = async () => {
+	const getAllSubjects = async () => {
 		// Send the token through the request "Authorization" Headers
 		try {
-			const response = await getAllProjectsService();
-			setProjects(response.data);
+			const response = await getAllSubjectsService();
+			setSubjects(response.data);
 			setLoading(false);
 		} catch (err) {
 			console.log(err);
@@ -21,17 +21,18 @@ function ProjectListPage() {
 	// We set this effect will run only once, after the initial render
 	// by setting the empty dependency array - []
 	useEffect(() => {
-		getAllProjects();
+		getAllSubjects();
 	}, []);
 
 	return (
 		<div className="ProjectListPage">
-			<AddProject refreshProjects={getAllProjects} />
+		    <AddSubject refreshProjects={getAllSubjects} />
 
 			{loading && <div>Loading...</div>}
-			 { !loading && projects?.map((project) => <ProjectCard key={project._id} {...project} />  )}  
+			 { !loading && subjects?.map((subject) => <SubjectCard key={subject._id} {...subject} />  )}  
 		</div>
 	);
 }
 
-export default ProjectListPage;
+export default SubjectListPage;
+

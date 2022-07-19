@@ -1,51 +1,51 @@
 import { useState, useEffect } from 'react';
-import { getProjectDetailsService } from '../services/project.services';
+import { getSubjectDetailsService } from '../services/project.services';
 
 import { Link, useParams } from 'react-router-dom';
 import AddTask from '../components/AddTask';
 import TaskCard from '../components/TaskCard';
 
-function ProjectDetailsPage(props) {
-	const [ project, setProject ] = useState(null);
+function SUbjectDetailsPage(props) {
+	const [ subject, setSubject ] = useState(null);
 	const { id } = useParams();
-	const projectId = id;
+	const subjectId = id;
 
-	const getProject = async () => {
+	const getSubject = async () => {
 		localStorage.getItem('authToken');
 		try {
-			const response = await getProjectDetailsService(id);
-			setProject(response.data);
+			const response = await getSubjectDetailsService(id);
+			setSubject(response.data);
 		} catch (err) {
 			console.log(err);
 		}
 	};
 
 	useEffect(() => {
-		getProject();
+		getSubject();
 		// eslint-disable-next-line
 	}, []);
 
 	return (
-		<div className="ProjectDetails">
-			{project && (
+		<div className="SubjectDetails">
+			{subject && (
 				<div>
-					<h1>Project: {project.title}</h1>
-					<p>Description: {project.description}</p>
+					<h1>Subject: {subject.title}</h1>
+					<p>Description: {subject.description}</p>
 				</div>
 			)}
 
-			<AddTask refreshProject={getProject} projectId={projectId} />
+			<AddTask refreshSubject={getSubject} SubjectId={subjectId} />
 
-			{project &&
-				project.tasks.map((task) => {
+			{subject &&
+				subject.tasks.map((task) => {
 					return <TaskCard key={task._id} {...task} />;
 				})}
-
-			<Link to="/projects">
-				<button>Back to projects</button>
+	        									
+			<Link to="/subjects">
+				<button>Back to subjects</button>
 			</Link>
 		</div>
 	);
 }
 
-export default ProjectDetailsPage;
+export default SUbjectDetailsPage;

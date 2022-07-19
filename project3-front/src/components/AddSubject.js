@@ -1,28 +1,28 @@
 import { useState } from 'react';
-import { addNewProjectService } from '../services/project.services.js';
+import { addNewSubjectService } from '../services/project.services.js';
 
-function AddProject(props) {
+function AddSubject(props) {
 	const [ title, setTitle ] = useState('');
 	const [ description, setDescription ] = useState('');
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		const newProject = { title, description };
+		const newSubject = { title, description };
 
 		// Send the token through the request "Authorization" Headers
 		try {
-			await addNewProjectService(newProject);
+			await addNewSubjectService(newSubject);
 			setTitle('');
 			setDescription('');
-			props.refreshProjects();
+			props.refreshSubjects();
 		} catch (err) {
 			console.log(err);
 		}
 	};
 
 	return (
-		<div className="AddProject">
+		<div className="AddSubject">
 			<h3>Add Project</h3>
 
 			<form onSubmit={handleSubmit}>
@@ -43,4 +43,4 @@ function AddProject(props) {
 	);
 }
 
-export default AddProject;
+export default AddSubject;
