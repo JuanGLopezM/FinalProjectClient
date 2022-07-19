@@ -1,26 +1,26 @@
 import React, { useState } from 'react';
 
-import { updateTaskService, deleteTaskService } from '../services/tasks.services';
+import { updateResourceService, deleteResourceService } from '../services/resources.services';
 
-function TaskCard({ title, description, _id }) {
+function ResourceCard({ title, description, _id }) {
 	const [ inputTitle, setInputTitle ] = useState(title);
 	const [ inputDescription, setInputDescription ] = useState(description);
 	const [ isDeleted, setIsDeleted ] = useState(false);
-	const idTask = _id;
+	const idResource = _id;
 
-	const handleSubmitTask = async (e) => {
+	const handleSubmitResource = async (e) => {
 		try {
 			const requestBody = { inputTitle, inputDescription };
 
-			await updateTaskService(idTask, requestBody);
+			await updateResourceService(idResource, requestBody);
 		} catch (err) {
 			console.log(err);
 		}
 	};
 
-	const handleDeleteTask = async (e) => {
+	const handleDeleteResource = async (e) => {
 		try {
-			await deleteTaskService(idTask);
+			await deleteResourceService(idResource);
 			setIsDeleted(true);
 		} catch (err) {
 			console.log(err);
@@ -30,8 +30,8 @@ function TaskCard({ title, description, _id }) {
 	return (
 		<div>
 			{!isDeleted && (
-				<div className="TaskCard card">
-					<p>Task</p>
+				<div className="ResourceCard card">
+					<p>Resource</p>
 					<input
 						value={inputTitle}
 						onChange={(e) => {
@@ -44,12 +44,12 @@ function TaskCard({ title, description, _id }) {
 							setInputDescription(e.target.value);
 						}}
 					/>
-					<button onClick={handleSubmitTask}>Modificar</button>
-					<button onClick={handleDeleteTask}>Eliminar</button>
+					<button onClick={handleSubmitResource}>Modificar</button>
+					<button onClick={handleDeleteResource}>Eliminar</button>
 				</div>
 			)}
 		</div>
 	);
 }
 
-export default TaskCard;
+export default ResourceCard;

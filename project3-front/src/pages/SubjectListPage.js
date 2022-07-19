@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import AddSubject from './../components/AddSubject';
-import SubjectCard from './../components/SubjectCard';
-import { getAllSubjectsService } from '../services/project.services';
+import AddSubject from '../components/AddSubject';
+import SubjectCard from '../components/SubjectCard';
+import { getAllSubjectsService } from '../services/subject.services';
 
 function SubjectListPage() {
 	const [ subjects, setSubjects ] = useState([]);
@@ -25,8 +25,8 @@ function SubjectListPage() {
 	}, []);
 
 	return (
-		<div className="ProjectListPage">
-		    <AddSubject refreshProjects={getAllSubjects} />
+		<div className="SubjectListPage">
+		    <AddSubject refreshSubjects={getAllSubjects} />
 
 			{loading && <div>Loading...</div>}
 			 { !loading && subjects?.map((subject) => <SubjectCard key={subject._id} {...subject} />  )}  

@@ -3,10 +3,10 @@ import axios from "axios";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
-function EditProjectPage(props) {
+function EditSubjectPage(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const projectId = props.match.params.id;
+  const subjectId = props.match.params.id;
   
   
   useEffect(() => {
@@ -16,17 +16,17 @@ function EditProjectPage(props) {
     // Send the token through the request "Authorization" Headers 
     axios
       .get(
-        `${API_URL}/projects/${projectId}`,
+        `${API_URL}/subjects/${subjectId}`,
         { headers: { Authorization: `Bearer ${storedToken}` } }    
       )
       .then((response) => {
-        const oneProject = response.data;
-        setTitle(oneProject.title);
-        setDescription(oneProject.description);
+        const oneSubject = response.data;
+        setTitle(oneSubject.title);
+        setDescription(oneSubject.description);
       })
       .catch((error) => console.log(error));
     
-  }, [projectId]);
+  }, [subjectId]);
   
 
   const handleFormSubmit = (e) => {
@@ -39,34 +39,34 @@ function EditProjectPage(props) {
     // Send the token through the request "Authorization" Headers   
     axios
       .put(
-        `${API_URL}/projects/${projectId}`,
+        `${API_URL}/subjects/${subjectId}`,
         requestBody,
         { headers: { Authorization: `Bearer ${storedToken}` } }              
       )
       .then((response) => {
-        props.history.push(`/projects/${projectId}`)
+        props.history.push(`/subjects/${subjectId}`)
       });
   };
   
   
-  const deleteProject = () => {
+  const deleteSubject = () => {
     // Get the token from the localStorage
     const storedToken = localStorage.getItem('authToken');      
     
     // Send the token through the request "Authorization" Headers   
     axios
       .delete(
-        `${API_URL}/projects/${projectId}`,
+        `${API_URL}/subjects/${subjectId}`,
         { headers: { Authorization: `Bearer ${storedToken}` } }           
       )
-      .then(() => props.history.push("/projects"))
+      .then(() => props.history.push("/subjects"))
       .catch((err) => console.log(err));
   };  
 
   
   return (
-    <div className="EditProjectPage">
-      <h3>Edit the Project</h3>
+    <div className="EditSubjectPage">
+      <h3>Edit the Subject</h3>
 
       <form onSubmit={handleFormSubmit}>
         <label>Title:</label>
@@ -84,12 +84,12 @@ function EditProjectPage(props) {
           onChange={(e) => setDescription(e.target.value)}
         />
 
-        <button type="submit">Update Project</button>
+        <button type="submit">Update Subject</button>
       </form>
 
-      <button onClick={deleteProject}>Delete Project</button>
+      <button onClick={deleteSubject}>Delete Subject</button>
     </div>
   );
 }
 
-export default EditProjectPage;
+export default EditSubjectPage;
