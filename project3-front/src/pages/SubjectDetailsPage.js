@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { getSubjectDetailsService } from '../services/project.services';
+import { getSubjectDetailsService } from '../services/subject.services';
 
 import { Link, useParams } from 'react-router-dom';
-import AddTask from '../components/AddTask';
-import TaskCard from '../components/TaskCard';
+import AddResource from '../components/AddResource';
+import ResourceCard from '../components/ResourceCard';
 
 function SUbjectDetailsPage(props) {
 	const [ subject, setSubject ] = useState(null);
@@ -34,11 +34,11 @@ function SUbjectDetailsPage(props) {
 				</div>
 			)}
 
-			<AddTask refreshSubject={getSubject} SubjectId={subjectId} />
+			<AddResource refreshSubject={getSubject} SubjectId={subjectId} />
 
 			{subject &&
-				subject.tasks.map((task) => {
-					return <TaskCard key={task._id} {...task} />;
+				subject.resources.map((resource) => {
+					return <ResourceCard key={resource._id} {...resource} />;
 				})}
 	        									
 			<Link to="/subjects">

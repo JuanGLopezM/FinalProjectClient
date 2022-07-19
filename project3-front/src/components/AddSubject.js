@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { addNewSubjectService } from '../services/project.services.js';
+import { addNewSubjectService } from '../services/subject.services.js';
 
 function AddSubject(props) {
 	const [ title, setTitle ] = useState('');
@@ -23,7 +23,7 @@ function AddSubject(props) {
 
 	return (
 		<div className="AddSubject">
-			<h3>Add Project</h3>
+			<h3>Add Subject</h3>
 
 			<form onSubmit={handleSubmit}>
 				<label>Title:</label>

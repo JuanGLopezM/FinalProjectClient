@@ -1,20 +1,20 @@
 import service from './service';
 
-const URL = '/tasks';
+const URL = '/resources';
 
-//add new task
-const addNewTaskService = (newTask) => {
-	return service.post(`${URL}/`, newTask);
+//add new resource
+const addNewResourceService = (newResource) => {
+	return service.post(`${URL}/`, newResource);
 };
 
-//delete task
-const deleteTaskService = (id) => {
+//delete resource
+const deleteResourceService = (id) => {
 	return service.delete(`${URL}/${id}`);
 };
 
-//update task
-const updateTaskService = (id, updatedTask) => {
-	return service.put(`${URL}/${id}`, updatedTask);
+//update resource
+const updateResourceService = (id, updatedResource) => {
+	return service.put(`${URL}/${id}`, updatedResource);
 };
 
-export { addNewTaskService, deleteTaskService, updateTaskService };
+export { addNewResourceService, deleteResourceService, updateResourceService };

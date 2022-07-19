@@ -2,8 +2,8 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
-import ProjectListPage from './pages/ProjectListPage';
-import ProjectDetailsPage from './pages/ProjectDetailsPage';
+import SubjectListPage from './pages/SubjectListPage';
+import SubjectDetailsPage from './pages/SubjectDetailsPage';
 
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
@@ -19,20 +19,20 @@ function App() {
 				<Route exact path="/" component={HomePage} />
 				<Route
 					exact
-					path="/projects"
+					path="/subjects"
 					element={
 						<PrivateRoute>
-							<ProjectListPage />
+							<SubjectListPage />
 						</PrivateRoute>
 					}
 				/>
 
 				<Route
 					exact
-					path="/projects/:id"
+					path="/subjects/:id"
 					element={
 						<PrivateRoute>
-							<ProjectDetailsPage />
+							<SubjectDetailsPage />
 						</PrivateRoute>
 					}
 				/>
