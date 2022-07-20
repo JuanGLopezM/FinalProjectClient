@@ -12,6 +12,7 @@ function SubjectListPage() {
 		try {
 			const response = await getAllSubjectsService();
 			setSubjects(response.data);
+			console.log(response.data)
 			setLoading(false);
 		} catch (err) {
 			console.log(err);
@@ -26,10 +27,10 @@ function SubjectListPage() {
 
 	return (
 		<div className="SubjectListPage">
-		    <AddSubject refreshSubjects={getAllSubjects} />
+		    
 
 			{loading && <div>Loading...</div>}
-			 { !loading && subjects?.map((subject) => <SubjectCard key={subject._id} {...subject} />  )}  
+			 { !loading && subjects.map((subject) => <SubjectCard key={subject._id} {...subject} />  )}  
 		</div>
 	);
 }
