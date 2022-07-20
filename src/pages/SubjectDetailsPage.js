@@ -5,18 +5,23 @@ import { Link, useParams } from 'react-router-dom';
 import AddResource from '../components/AddResource';
 import ResourceCard from '../components/ResourceCard';
 
-function SUbjectDetailsPage(props) {
+function SubjectDetailsPage(props) {
 	const [ subject, setSubject ] = useState(null);
 	const { id } = useParams();
 	const subjectId = id;
 
+
 	const getSubject = async () => {
 		localStorage.getItem('authToken');
+		
 		try {
 			const response = await getSubjectDetailsService(id);
 			setSubject(response.data);
+			console.log('response:',response)
+			console.log('subject:',subject)
 		} catch (err) {
 			console.log(err);
+			console.log('hola mundo')
 		}
 	};
 
@@ -26,11 +31,14 @@ function SUbjectDetailsPage(props) {
 	}, []);
 
 	return (
-		<div className="SubjectDetails">
+		<div className="ProjectDetails">
 			{subject && (
 				<div>
-					<h1>Subject: {subject.title}</h1>
+				
+					<h1>{subject.title}</h1>
 					<p>Description: {subject.description}</p>
+					<p>Tags: {subject.tags}</p>
+					<p>Resources: {subject.resources}</p>
 				</div>
 			)}
 
@@ -48,4 +56,4 @@ function SUbjectDetailsPage(props) {
 	);
 }
 
-export default SUbjectDetailsPage;
+export default SubjectDetailsPage;
