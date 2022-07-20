@@ -14,8 +14,9 @@ function SubjectCard({ title, description, _id, tags, resources  }) {
         }
     };
     return (
-        <div className="SubjectCard card">
+		<>
         {!isDeleted && (
+		<div className="SubjectCard card">
             <div>
             <Link to={`/subjects/${_id}`}>
                 <h3>{title}</h3>
@@ -25,8 +26,9 @@ function SubjectCard({ title, description, _id, tags, resources  }) {
             <p> Resources: {resources}</p>
             <button onClick={handleDeleteSubject}>Eliminar</button>
             </div>
+			</div>
         )}
-        </div>
+		</>
     );
 }
 export default SubjectCard;
