@@ -1,20 +1,24 @@
 import { useState } from 'react';
 import Spinner from 'react-bootstrap/Spinner';
 import { addNewResourceService } from '../services/resources.services';
-
+import {useParams} from 'react-router-dom'
 
 function AddResource(props) {
 	const [ tags, setTags ] = useState('');
 	const [ source, setSource ] = useState('');
 	const [ isLoading, setIsLoading ] = useState(false);
+	const {id}= useParams()
+	
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
 		// We need the subject id when creating the new resource
-		const { subjectId } = props;
+		// const { subjectId } = props;
+		// console.log(subjectId)
 		// Create an object representing the body of the POST request
-		const requestBody = { tags, source, subjectId };
+		const requestBody = { tags, source, id };
+		console.log(requestBody)
 
 		setIsLoading(true);
 		try {
@@ -26,6 +30,7 @@ function AddResource(props) {
 			props.refreshSubject();
 		} catch (err) {
 			console.log(err);
+			console.log('Por qué no podemos ser felices?');
 		}
 	};
 
@@ -35,12 +40,12 @@ function AddResource(props) {
 
 			<form onSubmit={handleSubmit}>
 				<label>Tags:</label>
-				<input type="text" name="title" value={tags} onChange={(e) => setTags(e.target.value)} />
+				<input type="text" name="tags" value={tags} onChange={(e) => setTags(e.target.value)} />
 
 				<label>Source:</label>
 				<textarea
 					type="text"
-					name="description"
+					name="source"
 					value={source}
 					onChange={(e) => setSource(e.target.value)}
 				/>

@@ -33,7 +33,7 @@ function SubjectDetailsPage(props) {
 	return (
 		<div className="ProjectDetails">
 			{subject && (
-				<div>
+				<div className="ResourceCard card">
 				
 					<h1>{subject.title}</h1>
 					<p>Description: {subject.description}</p>
