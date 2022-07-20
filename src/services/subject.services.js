@@ -13,4 +13,8 @@ const addNewSubjectService = (newSubject) => {
 	return service.post(`${URL}/`, newSubject);
 };
 
-export { getAllSubjectsService, addNewSubjectService, getSubjectDetailsService };
+//delete resource
+const deleteSubjectService = (id) => {
+	return service.delete(`${URL}/${id}`);
+};
+export { getAllSubjectsService, getSubjectDetailsService, addNewSubjectService, deleteSubjectService };

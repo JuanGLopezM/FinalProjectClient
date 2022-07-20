@@ -16,7 +16,11 @@ function App() {
 			<Navbar />
 
 			<Routes>
-				<Route exact path="/" component={HomePage} />
+				<Route exact path="/" element={
+						<PrivateRoute>
+							<HomePage />
+						</PrivateRoute>
+						} />
 				<Route
 					exact
 					path="/subjects"

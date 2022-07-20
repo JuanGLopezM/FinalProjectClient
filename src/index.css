@@ -90,7 +90,7 @@ nav li {
 }
 
 .EditSubjectPage form,
-.AddTask form,
+.AddResource form,
 .AddSubject form,
 .SignupPage form,
 .LoginPage form {
@@ -99,11 +99,11 @@ nav li {
   align-items: center;
 }
 
-.AddTask button,
+.AddResource button,
 .AddSubject button {
   display: block;
 }
 
-.TaskCard {
+.ResourceCard {
   background-color: #dfeef9;
 }
