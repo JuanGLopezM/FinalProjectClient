@@ -6,6 +6,8 @@ import { getAllSubjectsService } from '../services/subject.services';
 function SubjectListPage() {
 	const [ subjects, setSubjects ] = useState([]);
 	const [ loading, setLoading ] = useState(true);
+     // eslint-disable-next-line
+     const [ filter , setFilter ] = useState([]);
 
 	const getAllSubjects = async () => {
 		// Send the token through the request "Authorization" Headers
@@ -13,6 +15,7 @@ function SubjectListPage() {
 			const response = await getAllSubjectsService();
 			setSubjects(response.data);
 			setLoading(false);
+               setFilter(response.data)
 		} catch (err) {
 			console.log(err);
 		}
@@ -25,6 +28,7 @@ function SubjectListPage() {
 	}, []);
 
 	return (
+
         <div>
         <br></br>
         <br></br>

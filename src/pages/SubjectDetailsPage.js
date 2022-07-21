@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getSubjectDetailsService } from '../services/subject.services';
-
+import EditSubject from '../components/EditSubject';
 import { Link, useParams } from 'react-router-dom';
 import AddResource from '../components/AddResource';
 import ResourceCard from '../components/ResourceCard';
@@ -17,8 +17,7 @@ function SubjectDetailsPage(props) {
 		try {
 			const response = await getSubjectDetailsService(id);
 			setSubject(response.data);
-			console.log('response:',response)
-			console.log('subject:',subject)
+			
 		} catch (err) {
 			console.log(err);
 			console.log('hola mundo')
@@ -41,6 +40,7 @@ function SubjectDetailsPage(props) {
 					{/* <p>Resources: {subject.resources}</p> */}
 				</div>
 			)}
+			<EditSubject setSubject= {setSubject}   SubjectId={subjectId} />
 
 			<AddResource refreshSubject={getSubject} SubjectId={subjectId} />
 
