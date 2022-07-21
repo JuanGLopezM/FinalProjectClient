@@ -115,3 +115,7 @@ nav li {
   display: flex;
   justify-content: space-around;
 }
+
+.road{
+width:70em;
+}

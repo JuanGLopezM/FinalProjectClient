@@ -16,11 +16,11 @@ function Navbar() {
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Home </a>
-          </li>
           {isLoggedIn
             ? (<>
+              <li class="nav-item active">
+            <a class="nav-link" href="/">Roadmap</a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="/subjects">Materials</a>
               </li>
