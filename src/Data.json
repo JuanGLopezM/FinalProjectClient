@@ -1,0 +1,29 @@
+[
+    {
+      "title": "JavaScript",
+      "description": "Frontend main logic",
+      "tags": "Subject",
+      "resources": []
+    },
+
+    {
+        "title": "Node",
+        "description": "Node description",
+        "tags": "Subject",
+        "resources": []
+      },
+
+    {
+        "title": "React",
+        "description": "New JS to interact with backend",
+        "tags": "Subject",
+        "resources": []
+    },
+    
+    {
+        "title": "MongoDB",
+        "description": "Data Base",
+        "tags": "Subject",
+        "resources": []
+    }
+]

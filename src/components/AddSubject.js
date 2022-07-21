@@ -4,12 +4,10 @@ function AddSubject(props) {
     const [ title, setTitle ] = useState('');
     const [ description, setDescription ] = useState('');
     const [ tags, setTags ] = useState('');
-    const [ resources, setResources ] = useState('');
-    
 
 	const handleSubmit = async (e) => {
         e.preventDefault();
-        const newSubject = { title, description, tags, resources };
+        const newSubject = { title, description, tags };
         // Send the token through the request "Authorization" Headers
 		console.log('NEWSUBJECT:',newSubject)
         try {
@@ -18,7 +16,6 @@ function AddSubject(props) {
             setTitle('');
             setDescription('');
             setTags('');
-            setResources('');
             props.refreshSubjects();
         } catch (err) {
             console.log(err);
@@ -39,8 +36,8 @@ function AddSubject(props) {
                 />
                 <label>Tags:</label>
                 <input type="text" name="tags" value={tags} onChange={(e) => setTags(e.target.value)} />
-                <label>Resources:</label>
-                <input type="text" name="resources" value={resources} onChange={(e) => setResources(e.target.value)} />
+                {/* <label>Resources:</label>
+                <input type="text" name="resources" value={resources} onChange={(e) => setResources(e.target.value)} /> */}
                 <button type="submit">Submit</button>
             </form>
         </div>

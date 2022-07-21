@@ -38,7 +38,7 @@ function SubjectDetailsPage(props) {
 					<h1>{subject.title}</h1>
 					<p>Description: {subject.description}</p>
 					<p>Tags: {subject.tags}</p>
-					<p>Resources: {subject.resources}</p>
+					{/* <p>Resources: {subject.resources}</p> */}
 				</div>
 			)}
 
