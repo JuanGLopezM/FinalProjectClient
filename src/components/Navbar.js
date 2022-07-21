@@ -10,7 +10,7 @@ function Navbar() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
   return (
     <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
-    <SearchBar data={SubjectData} />
+    {/* <SearchBar data={SubjectData} /> */}
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -22,7 +22,7 @@ function Navbar() {
           {isLoggedIn
             ? (<>
               <li class="nav-item">
-                <a class="nav-link" href="/subjects">Subjects</a>
+                <a class="nav-link" href="/subjects">Materials</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/profile">Profile</a>

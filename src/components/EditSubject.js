@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { updateSubjectService, deleteSubjectService } from '../services/subject.services';
 import { useNavigate } from 'react-router-dom'
 
-function EditSubject({ setSubject, SubjectId }) {
-    const [inputTitle, setInputTitle] = useState('');
+function EditSubject({ setSubject, SubjectId, title, description, Tags }) {
+    const [inputTitle, setInputTitle] = useState(title);
     const [inputDescription, setInputDescription] = useState('');
     const [inputTags, setInputTags] = useState('');
     const [isDeleted, setIsDeleted] = useState(false);
