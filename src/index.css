@@ -107,3 +107,9 @@ nav li {
 .ResourceCard {
   background-color: #dfeef9;
 }
+
+.circulo{
+  /* width:50%;
+  border-radius: 30%; */
+  padding: 7em;
+}

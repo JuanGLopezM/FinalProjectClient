@@ -50,7 +50,7 @@ function SubjectDetailsPage(props) {
 				})}
 	        									
 			<Link to="/subjects">
-				<button>Back to subjects</button>
+				<button class="btn btn-outline-info">Back to subjects</button>
 			</Link>
 		</div>
 	);

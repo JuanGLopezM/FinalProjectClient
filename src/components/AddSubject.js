@@ -38,7 +38,7 @@ function AddSubject(props) {
                 <input type="text" name="tags" value={tags} onChange={(e) => setTags(e.target.value)} />
                 {/* <label>Resources:</label>
                 <input type="text" name="resources" value={resources} onChange={(e) => setResources(e.target.value)} /> */}
-                <button type="submit">Submit</button>
+                <button type="submit" class="btn btn-outline-info">Submit</button>
             </form>
         </div>
     );

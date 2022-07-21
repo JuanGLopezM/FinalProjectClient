@@ -25,13 +25,26 @@ function SubjectListPage() {
 	}, []);
 
 	return (
-		<div className="SubjectListPage">
-		    <AddSubject refreshSubjects={getAllSubjects} />
-
-			{loading && <div>Loading...</div>}
-			 { !loading && subjects.map((subject) => <SubjectCard key={subject._id} {...subject} />  )}  
-		</div>
-	);
+        <div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <h1>What do you want to learn today?</h1>
+        <br></br>
+        <br></br>
+        <br></br>
+        <h2>MERN</h2>
+        <br></br>
+        <div className="row">
+        {loading && <div>Loading...</div>}
+             { !loading && subjects.map((subject) => <SubjectCard key={subject._id} {...subject} />  )}
+        </div>
+        <br></br>
+        <br></br>
+        <br></br>
+             <AddSubject refreshSubjects={getAllSubjects} />
+        </div>
+    );
 }
 
 export default SubjectListPage;

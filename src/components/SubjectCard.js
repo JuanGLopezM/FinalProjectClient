@@ -16,7 +16,8 @@ function SubjectCard({ title, description, _id, tags, resources  }) {
     return (
 		<>
         {!isDeleted && (
-		<div className="SubjectCard card">
+        <div className="row col-sm-3">
+		<div className="SubjectCard card circulo col-sm-4 mb-3 rounded-pill">
             <div>
             <Link to={`/subjects/${_id}`}>
                 <h3>{title}</h3>
@@ -24,9 +25,10 @@ function SubjectCard({ title, description, _id, tags, resources  }) {
             <p style={{ maxWidth: '400px' }}>Description: {description} </p>
             <p>Tags: {tags}</p>
             <p> Resources: {resources}</p>
-            <button onClick={handleDeleteSubject}>Eliminar</button>
+            <button onClick={handleDeleteSubject} class="btn btn-outline-danger">Eliminar</button>
             </div>
 			</div>
+            </div>
         )}
 		</>
     );

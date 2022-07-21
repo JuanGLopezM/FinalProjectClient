@@ -44,8 +44,8 @@ function ResourceCard({ title, description, _id }) {
 							setInputDescription(e.target.value);
 						}}
 					/>
-					<button onClick={handleSubmitResource}>Modificar</button>
-					<button onClick={handleDeleteResource}>Eliminar</button>
+					<button onClick={handleSubmitResource} class="btn btn-outline-primary">Modificar</button>
+					<button onClick={handleDeleteResource} class="btn btn-outline-danger">Eliminar</button>
 				</div>
 			)}
 		</div>

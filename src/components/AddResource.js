@@ -50,7 +50,7 @@ function AddResource(props) {
 					onChange={(e) => setSource(e.target.value)}
 				/>
 
-				<button type="submit">Add Resource</button>
+				<button type="submit" class="btn btn-outline-info">Add Resource</button>
 				{isLoading && <Spinner animation="grow" size="sm" />}
 			</form>
 		</div>

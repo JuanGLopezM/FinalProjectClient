@@ -1,0 +1,22 @@
+[
+    {
+      "title": "JavaScript",
+      "description": "Frontend main logic",
+      "tags": "Subject",
+      "resources": "Link1"
+    },
+
+
+    {
+        "title": "React",
+        "description": "New JS to interact with backend",
+        "tags": "Subject",
+        "resources": "Link2"
+    },
+    {
+        "title": "MongoDB",
+        "description": "Data Base",
+        "tags": "Subject",
+        "resources": "Link3"
+    }
+]
