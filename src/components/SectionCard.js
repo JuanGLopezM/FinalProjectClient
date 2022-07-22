@@ -1,19 +1,20 @@
 import { Link } from 'react-router-dom';
-import { deleteSubjectService } from '../services/subject.services';
+import { deleteSectionService } from '../services/section.services';
 import React, { useState } from 'react';
 // We are deconstructing props object directly in the parentheses of the function
-function SubjectCard({ title, description, _id, tags, sections }) {
+function SectionCard({ title, tags, _id }) {
     const idSubject = _id;
-    const [isDeleted, setIsDeleted] = useState(false);
-    // eslint-disable-next-line
-    // const handleDeleteSubject = async (e) => {
+    // const [isDeleted, setIsDeleted] = useState(false);
+   // eslint-disable-next-line
+    // const handleDeleteSection = async (e) => {
     //     try {
-    //         await deleteSubjectService(idSubject);
+    //         await deleteSectionService(idSubject);
     //         setIsDeleted(true);
     //     } catch (err) {
     //         console.log(err);
     //     }
     // };
+
     return (
         <>
             {/* {!isDeleted && ( */}
@@ -26,7 +27,7 @@ function SubjectCard({ title, description, _id, tags, sections }) {
                             {/* <p style={{ maxWidth: '400px' }}>Description: {description} </p>
             <p>Tags: {tags}</p>
             <p> Resources: {resources}</p> */}
-                            {/* <button onClick={handleDeleteSubject} class="btn btn-outline-danger">Eliminar</button> */}
+                            {/* <button onClick={handleDeleteSection} class="btn btn-outline-danger">Delete</button> */}
                         </div>
                     </div>
                 </div>
@@ -34,4 +35,4 @@ function SubjectCard({ title, description, _id, tags, sections }) {
         </>
     );
 }
-export default SubjectCard;
+export default SectionCard;

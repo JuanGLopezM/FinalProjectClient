@@ -29,8 +29,8 @@ textarea {
 }
 
 nav {
-  background: #515f7d;
-  color: white;
+  background: #3b5386;
+  color: #3b5386 !important;
   padding: 0px 20px;
   box-shadow: 0px 1px 2px gray;
   width: 100%;

@@ -2,17 +2,18 @@ import { useState, useEffect } from 'react';
 import { getSubjectDetailsService } from '../services/subject.services';
 import EditSubject from '../components/EditSubject';
 import { Link, useParams } from 'react-router-dom';
-import AddSection from '../components/AddSection';
-import SectionCard from '../components/SectionCard';
+import AddResource from '../components/AddResource';
+import ResourceCard from '../components/ResourceCard';
 
-function SubjectDetailsPage(props) {
+function SectionDetailsPage(props) {
 	const [subject, setSubject] = useState(null);
 	const { id } = useParams();
 	const subjectId = id;
-	console.log('ID:', id)
+
 
 	const getSubject = async () => {
 		localStorage.getItem('authToken');
+
 		try {
 			const response = await getSubjectDetailsService(id);
 			setSubject(response.data);
@@ -22,13 +23,12 @@ function SubjectDetailsPage(props) {
 			console.log('hola mundo')
 		}
 	};
-	useEffect(() => {
 
+	useEffect(() => {
 		getSubject();
-	
 		// eslint-disable-next-line
 	}, []);
-	console.log(subject);
+
 	return (
 		<div className="ProjectDetails">
 			{subject && (
@@ -40,15 +40,19 @@ function SubjectDetailsPage(props) {
 				</div>
 			)}
 			<EditSubject setSubject={setSubject} SubjectId={subjectId} />
-			<AddSection refreshSubject={getSubject} SubjectId={subjectId} />
+
+			<AddResource refreshSubject={getSubject} SubjectId={subjectId} />
+
 			{subject &&
-                subject.sections.map((section) => {
-                    return <SectionCard key={section._id} {...section} />;
-                })}
+				subject.resources.map((resource) => {
+					return <ResourceCard key={resource._id} {...resource} />;
+				})}
+
 			<Link to="/subjects">
-				<button class="btn btn-outline-info">Back to Materials</button>
+				<button class="btn btn-outline-info">Back to subjects</button>
 			</Link>
 		</div>
 	);
 }
-export default SubjectDetailsPage;
+
+export default SectionDetailsPage;

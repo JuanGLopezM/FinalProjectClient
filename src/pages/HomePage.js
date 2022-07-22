@@ -10,7 +10,7 @@ function HomePage() {
 
   return (
     <div>
-      <button onClick={handleState}   class="btn btn-outline-info">Switch</button>
+      <button onClick={handleState}   class="btn btn-outline-info">{first? "Backend" : "Front-end"}</button>
       <br></br>
       <img src={first? front : back} className="road" alt='front'/>
     </div>
