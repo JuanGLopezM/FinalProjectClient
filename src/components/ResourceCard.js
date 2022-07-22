@@ -5,6 +5,7 @@ function ResourceCard({ tags, source, _id }) {
     const [ inputSource, setImputSource ] = useState(source);
     const [ isDeleted, setIsDeleted ] = useState(false);
     const idResource = _id;
+    
     const handleSubmitResource = async (e) => {
         try {
             const requestBody = { inputTags, inputSource };
@@ -13,6 +14,7 @@ function ResourceCard({ tags, source, _id }) {
             console.log(err);
         }
     };
+    
     const handleDeleteResource = async (e) => {
         try {
             await deleteResourceService(idResource);

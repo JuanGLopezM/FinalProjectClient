@@ -8,7 +8,8 @@ function AddResource(props) {
 	const [ source, setSource ] = useState('');
 	const [ isLoading, setIsLoading ] = useState(false);
 	const {id}= useParams()
-	
+	const sectionId = id;
+	console.log('ID:', sectionId)
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -17,7 +18,7 @@ function AddResource(props) {
 		// const { subjectId } = props;
 		// console.log(subjectId)
 		// Create an object representing the body of the POST request
-		const requestBody = { tags, source, id };
+		const requestBody = { tags, source, sectionId };
 		console.log(requestBody)
 
 		setIsLoading(true);

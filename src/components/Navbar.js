@@ -18,7 +18,7 @@ function Navbar() {
         <ul class="navbar-nav">
           {isLoggedIn
             ? (<>
-              <li class="nav-item active">
+              <li class="nav-item">
             <a class="nav-link" href="/">Roadmap</a>
               </li>
               <li class="nav-item">
