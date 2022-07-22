@@ -1,46 +1,47 @@
 import { useState, useEffect } from 'react';
-import { getSubjectDetailsService } from '../services/subject.services';
-import EditSubject from '../components/EditSubject';
+import { getSectionDetailsService } from '../services/section.services';
+import EditSection from '../components/EditSection';
 import { Link, useParams } from 'react-router-dom';
 import AddResource from '../components/AddResource';
 import ResourceCard from '../components/ResourceCard';
-
 function SectionDetailsPage(props) {
-    const [subject, setSubject] = useState(null);
+    const [section, setSection] = useState(null);
     const { id } = useParams();
-    const subjectId = id;
-    const getSubject = async () => {
+    const sectionId = id;
+    console.log("props", props)
+    
+    const getSection = async () => {
         localStorage.getItem('authToken');
         try {
-            const response = await getSubjectDetailsService(id);
-            setSubject(response.data);
+            const response = await getSectionDetailsService(sectionId);
+            setSection(response.data);
+            console.log('section;', section)
         } catch (err) {
             console.log(err);
             console.log('hola mundo')
         }
     };
     useEffect(() => {
-        getSubject();
+        getSection();
         // eslint-disable-next-line
     }, []);
     return (
         <div className="ProjectDetails">
-            {subject && (
+            {section && (
                 <div className="ResourceCard card">
-                    <h1>{subject.title}</h1>
-                    <p>Description: {subject.description}</p>
-                    <p>Tags: {subject.tags}</p>
+                    <h1>{section.title}</h1>
+                 <p>Tags: {section.tags}</p>
                     {/* <p>Resources: {subject.resources}</p> */}
                 </div>
             )}
-            <EditSubject setSubject={setSubject} SubjectId={subjectId} />
-            <AddResource refreshSubject={getSubject} SubjectId={subjectId} />
-            {subject &&
-                subject.resources.map((resource) => {
+            <EditSection setSection={setSection} SectionId={sectionId} />
+            <AddResource refreshSubject={getSection} SubjectId={sectionId} />
+            {section &&
+                section.resources.map((resource) => {
                     return <ResourceCard key={resource._id} {...resource} />;
                 })}
             <Link to="/subjects">
-                <button class="btn btn-outline-info">Back to subjects</button>
+                <button class="btn btn-outline-info">Back to Materials</button>
             </Link>
         </div>
     );
