@@ -28,7 +28,7 @@ function AddResource(props) {
 			setTags('');
 			setSource('');
 			setIsLoading(false);
-			props.refreshSubject();
+			props.refreshSection();
 		} catch (err) {
 			console.log(err);
 			console.log('Por qué no podemos ser felices?');
