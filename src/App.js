@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import SubjectListPage from './pages/SubjectListPage';
 import SubjectDetailsPage from './pages/SubjectDetailsPage';
-
+import SectionDetailsPage from './pages/SectionDetailsPage';
 
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
@@ -43,6 +43,16 @@ function App() {
 						</PrivateRoute>
 					}
 				/>
+
+				<Route
+                    exact
+                    path="/sections/:id"
+                    element={
+                        <PrivateRoute>
+                            <SectionDetailsPage />
+                        </PrivateRoute>
+                    }
+                />
 
 				<Route
 					exact

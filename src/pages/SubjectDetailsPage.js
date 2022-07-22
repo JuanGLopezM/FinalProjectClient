@@ -39,7 +39,7 @@ function SubjectDetailsPage(props) {
 					{/* <p>Resources: {subject.resources}</p> */}
 				</div>
 			)}
-			<EditSubject setSubject={setSubject} SubjectId={subjectId} />
+			<EditSubject setSubject={setSubject} refreshSubject={getSubject} SubjectId={subjectId} />
 			<AddSection refreshSubject={getSubject} SubjectId={subjectId} />
 			{subject &&
                 subject.sections.map((section) => {

@@ -32,7 +32,6 @@ function AddSection(props) {
             <form onSubmit={handleSubmit}>
                 <label>Title:</label>
                 <input type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} />
-                <label>Description:</label>
                 <label>Tags:</label>
                 <input type="text" name="tags" value={tags} onChange={(e) => setTags(e.target.value)} />
                 {/* <label>Resources:</label>
