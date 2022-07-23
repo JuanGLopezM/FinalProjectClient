@@ -1,35 +1,31 @@
 import { useState, useEffect } from 'react';
+import React from "react";
 import AddSubject from '../components/AddSubject';
 import SubjectCard from '../components/SubjectCard';
 import { getAllSubjectsService } from '../services/subject.services';
-
 function SubjectListPage() {
-	const [ subjects, setSubjects ] = useState([]);
-	const [ loading, setLoading ] = useState(true);
+     const [ subjects, setSubjects ] = useState([]);
+     const [ loading, setLoading ] = useState(true);
      // eslint-disable-next-line
      const [ filter , setFilter ] = useState([]);
-
-	const getAllSubjects = async () => {
-		// Send the token through the request "Authorization" Headers
-		try {
-			const response = await getAllSubjectsService();
-			setSubjects(response.data);
-			setLoading(false);
+     const getAllSubjects = async () => {
+          // Send the token through the request "Authorization" Headers
+          try {
+               const response = await getAllSubjectsService();
+               setSubjects(response.data);
+               setLoading(false);
                setFilter(response.data)
-		} catch (err) {
-			console.log(err);
-		}
-	};
-
-	// We set this effect will run only once, after the initial render
-	// by setting the empty dependency array - []
-	useEffect(() => {
-		getAllSubjects();
-	}, []);
-
-	return (
-
-        <div>
+          } catch (err) {
+               console.log(err);
+          }
+     };
+     // We set this effect will run only once, after the initial render
+     // by setting the empty dependency array - []
+     useEffect(() => {
+          getAllSubjects();
+     }, []);
+     return (
+        <div className="subjectListPage">
         <br></br>
         <br></br>
         <br></br>
@@ -50,6 +46,4 @@ function SubjectListPage() {
         </div>
     );
 }
-
 export default SubjectListPage;
-

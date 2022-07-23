@@ -1,12 +1,10 @@
 body {
   margin: 0;
 }
-
 a {
   list-style: none;
   color: black;
 }
-
 button,
 select {
   padding: 5px 10px;
@@ -14,12 +12,10 @@ select {
   margin: 5px;
   font-size: 18px;
 }
-
 label {
   width: 200px;
   display: block;
 }
-
 input,
 textarea {
   width: 200px;
@@ -27,45 +23,40 @@ textarea {
   display: inline-block;
   margin: 10px;
 }
-
 nav {
-  background: #3b5386;
-  color: #3b5386 !important;
+  background: #3B5386;
+  color: #3B5386 !important;
   padding: 0px 20px;
   box-shadow: 0px 1px 2px gray;
   width: 100%;
   margin-bottom: 15px;
   padding: 5px;
 }
-
 nav li {
   list-style: none;
   color: white;
   font-size: 24px;
   font-weight: 600;
 }
-
 .card {
   width: 400px;
   padding: 10px;
   box-shadow: 0px 2px 3px grey;
   margin: 0 auto;
   margin-bottom: 20px;
-  background: #94a7c8;
+  background: #94A7C8;
   border-radius: 4px;
 }
-
 /* .SubjectCard h3::after {
   content: url("https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/m3/icon-expand.png");
   margin-left: 5px;
 } */
-
 .EditSubjectPage,
 .AddSubject,
 .AddTask,
 .SignupPage,
 .LoginPage {
-  background: #f9eec3;
+  background: #F9EEC3;
   border: 1px solid grey;
   box-shadow: 0px 2px 3px grey;
   width: 400px;
@@ -75,20 +66,16 @@ nav li {
   padding: 10px;
   border-radius: 4px;
 }
-
 .EditSubjectPage {
   background-color: rgb(239, 196, 88);
 }
-
 .SignupPage,
 .LoginPage {
-  background-color: #608dd5;
+  background-color: #608DD5;
 }
-
 .LoginPage {
-  background-color: #94a7c8;
+  background-color: #94A7C8;
 }
-
 .EditSubjectPage form,
 .AddResource form,
 .AddSubject form,
@@ -98,24 +85,38 @@ nav li {
   flex-direction: column;
   align-items: center;
 }
-
 .AddResource button,
 .AddSubject button {
   display: block;
 }
-
 .ResourceCard {
-  background-color: #dfeef9;
+  background-color: #DFEEF9;
 }
-
-.circulo{
-  /* width:50%;
-  border-radius: 30%; */
-  padding: 5em;
-  display: flex;
-  justify-content: space-around;
-}
-
 .road{
-width:70em;
+  width:70em;
+  }
+.circulo{
+  background-color: rgba(4, 4, 26, 0.651);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 255, 255, 0.973);
+  margin:auto;
+  margin-bottom: 30px;
+  box-shadow: 0px 0px 10px #00FFFF;
+}
+.roundFont h3{
+  color:rgb(243, 243, 243)
+}
+.center{
+   margin-top: 45%
+}
+/* .subjectListPage{
+  background-color: rgb(121, 120, 120);
+} */
+.colorNav{
+  background-color: rgba(4, 4, 26, 0.671)!important;
+}
+.navbar-nav li a{
+  color: rgb(243, 243, 243)!important;
 }
