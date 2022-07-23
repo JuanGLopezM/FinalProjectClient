@@ -8,17 +8,15 @@ function SectionDetailsPage(props) {
     const [section, setSection] = useState(null);
     const { id } = useParams();
     const sectionId = id;
-    console.log("props", props)
     
     const getSection = async () => {
         localStorage.getItem('authToken');
         try {
             const response = await getSectionDetailsService(sectionId);
             setSection(response.data);
-            console.log('section;', section)
+            
         } catch (err) {
             console.log(err);
-            console.log('hola mundo')
         }
     };
     useEffect(() => {

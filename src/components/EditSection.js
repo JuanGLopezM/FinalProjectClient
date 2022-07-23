@@ -15,7 +15,7 @@ function EditSection({ setSection, SectionId, title, Tags, refreshSection }) {
             refreshSection()
         } catch (err) {
             console.log(err);
-            console.log('Holi')
+            
         }
     };
     const handleDeleteSubject = async (e) => {

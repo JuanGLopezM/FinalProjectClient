@@ -7,7 +7,7 @@ function AddSection(props) {
     const [ tags, setTags ] = useState('');
     const { id } = useParams();
 	const subjectId = id;
-	console.log('ID:', subjectId)
+	
 
 
 
@@ -15,10 +15,9 @@ function AddSection(props) {
         e.preventDefault();
         const newSubject = { title, tags, subjectId };
         // Send the token through the request "Authorization" Headers
-        console.log('NEWSUBJECT:',newSubject)
+        
         try {
             await addNewSectionService(newSubject);
-            console.log('NEWSUBJECT:',newSubject);
             setTitle('');
             setTags('');
             props.refreshSubject();

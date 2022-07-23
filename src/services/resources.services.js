@@ -4,7 +4,7 @@ const URL = '/resources';
 
 //add new resource
 const addNewResourceService = (newResource) => {
-	return service.post(`${URL}/`, newResource);
+	return service.post(`${URL}`, newResource);
 };
 
 //delete resource

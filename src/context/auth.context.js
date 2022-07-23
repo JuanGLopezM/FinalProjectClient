@@ -31,6 +31,7 @@ function AuthProviderWrapper(props) {
 					setIsLoggedIn(false);
 					setUser(null);
 					setIsLoading(false);
+					console.log(error);
 				});
 		} else {
 			// If the token is not available

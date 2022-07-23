@@ -8,11 +8,9 @@ function AddSubject(props) {
 	const handleSubmit = async (e) => {
         e.preventDefault();
         const newSubject = { title, description, tags };
-        // Send the token through the request "Authorization" Headers
-		console.log('NEWSUBJECT:',newSubject)
+        
         try {
             await addNewSubjectService(newSubject);
-			console.log('NEWSUBJECT:',newSubject)
             setTitle('');
             setDescription('');
             setTags('');

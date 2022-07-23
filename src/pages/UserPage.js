@@ -15,7 +15,6 @@ function UserPage (props){
             setUser(response.data);
         } catch (err) {
             console.log(err);
-            console.log('hola mundo')
         }
     };
     useEffect(() => {

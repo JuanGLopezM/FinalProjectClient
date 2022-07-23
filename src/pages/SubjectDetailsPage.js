@@ -8,7 +8,6 @@ function SubjectDetailsPage(props) {
     const [subject, setSubject] = useState(null);
     const { id } = useParams();
     const subjectId = id;
-    console.log('ID:', id)
     const getSubject = async () => {
         localStorage.getItem('authToken');
         try {
@@ -16,7 +15,7 @@ function SubjectDetailsPage(props) {
             setSubject(response.data);
         } catch (err) {
             console.log(err);
-            console.log('hola mundo')
+           
         }
     };
     useEffect(() => {

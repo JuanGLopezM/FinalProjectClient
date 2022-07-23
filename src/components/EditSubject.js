@@ -14,13 +14,11 @@ function EditSubject({ setSubject, SubjectId, title, description, Tags, refreshS
         try {
             const updatedSubject = { inputTitle, inputDescription, inputTags };
             const responseSubj = await updateSubjectService(SubjectId, updatedSubject);
-            console.log('res. subject:', responseSubj.data)
             setSubject(responseSubj.data)
             refreshSubject();
-            console.log('idSubject:', SubjectId)
+    
         } catch (err) {
             console.log(err);
-            console.log('Holi')
         }
     };
 
