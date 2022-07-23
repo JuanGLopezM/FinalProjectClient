@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
-import { deleteSubjectService } from '../services/subject.services';
-import React, { useState } from 'react';
+// import { deleteSubjectService } from '../services/subject.services';
+// import { useState } from 'react';
+import React from 'react';
 // We are deconstructing props object directly in the parentheses of the function
 function SubjectCard({ title, description, _id, tags, sections }) {
     const idSubject = _id;
-    const [isDeleted, setIsDeleted] = useState(false);
+    // const [isDeleted, setIsDeleted] = useState(false);
     // eslint-disable-next-line
     // const handleDeleteSubject = async (e) => {
     //     try {
@@ -21,7 +22,7 @@ function SubjectCard({ title, description, _id, tags, sections }) {
                     <div className="subjectCard ">
                         <div className="center backgroundColor roundFont ">
                         
-                            <Link to={`/subjects/${_id}`} class="btn btn-outline-info" >
+                            <Link to={`/subjects/${idSubject}`} class="btn btn-outline-info" >
                                 <h3 >{title}</h3>
                             </Link>
                             {/* <p style={{ maxWidth: '400px' }}>Description: {description} </p>
