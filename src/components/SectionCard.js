@@ -17,10 +17,11 @@ function SectionCard({ title, tags, _id }) {
     return (
         <>
             {/* {!isDeleted && ( */}
-                <div className="row col-sm-3 circulo">
-                    <div className="SubjectCard card col-sm-4 mb-2 rounded-pill d-flex">
+            <div  className="circulo">
+                <div className="subjectCard">
+                    <div className="center backgroundColor roundFont">
                         <div>
-                            <Link to={`/sections/${idSubject}`}>
+                            <Link to={`/sections/${idSubject}`} class="btn btn-outline-info">
                                 <h3>{title}</h3>
                             </Link>
                             {/* <p style={{ maxWidth: '400px' }}>Description: {description} </p>
@@ -29,6 +30,7 @@ function SectionCard({ title, tags, _id }) {
                             {/* <button onClick={handleDeleteSection} class="btn btn-outline-danger">Delete</button> */}
                         </div>
                     </div>
+                </div>
                 </div>
             {/* )} */}
         </>

@@ -38,7 +38,7 @@ function EditSubject({ setSubject, SubjectId, title, description, Tags, refreshS
         <div>
             {!isDeleted && (
                 <div className="ResourceCard card">
-                    <p>Subject</p>
+                    <h4>Edit/Delete Subject</h4>
                     <input
                         value={inputTitle}
                         onChange={(e) => {

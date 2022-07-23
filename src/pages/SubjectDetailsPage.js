@@ -31,7 +31,7 @@ function SubjectDetailsPage(props) {
 	console.log(subject);
 	return (
 		<div className="ProjectDetails">
-			{subject && (
+		{subject && (
 				<div className="ResourceCard card">
 					<h1>{subject.title}</h1>
 					<p>Description: {subject.description}</p>
@@ -39,12 +39,16 @@ function SubjectDetailsPage(props) {
 					{/* <p>Resources: {subject.resources}</p> */}
 				</div>
 			)}
-			<EditSubject setSubject={setSubject} refreshSubject={getSubject} SubjectId={subjectId} />
-			<AddSection refreshSubject={getSubject} SubjectId={subjectId} />
+					<div className="row">
 			{subject &&
                 subject.sections.map((section) => {
                     return <SectionCard key={section._id} {...section} />;
                 })}
+			</div>
+			
+			<EditSubject setSubject={setSubject} refreshSubject={getSubject} SubjectId={subjectId} />
+			<AddSection refreshSubject={getSubject} SubjectId={subjectId} />
+
 			<Link to="/subjects">
 				<button class="btn btn-outline-info">Back to Materials</button>
 			</Link>
