@@ -9,23 +9,22 @@ function Navbar() {
   // eslint-disable-next-line
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+    <nav class="navbar  navbar-expand-lg rounded colorNav">
     <SearchBar data={SubjectData} />
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      
+      
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           {isLoggedIn
             ? (<>
               <li class="nav-item">
-            <a class="nav-link" href="/">Roadmap</a>
+            <a class="nav-link rounded" href="/">Roadmap</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/subjects">Materials</a>
+                <a class="nav-link rounded" href="/subjects">Materials</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/profile">Profile</a>
+                <a class="nav-link rounded" href="/profile">Profile</a>
               </li>
               <li class="nav-item navbar-right">
                 <button class="rounded" onClick={logOutUser}>Logout</button>

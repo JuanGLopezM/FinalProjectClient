@@ -10,11 +10,14 @@ import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import PrivateRoute from './components/PrivateRoute'; 
 import AnonRoute from './components/AnonRoute'; 
+import background from "./05.jpg";
 // eslint-disable-next-line
 import SearchBar from './components/SearchBar';  
 
 function App() {
 	return (
+		<div style={{ backgroundImage: `url(${background})`,
+		backgroundRepeat: 'no-repeat', backgroundSize: "cover", backgroundAttachment: "fixed"}}>
 		<div className="App">
 			<Navbar />
 			{/* <SearchBar placeholder="Enter the Subject" data={SubjectData}/> */}
@@ -73,7 +76,9 @@ function App() {
 					}
 				/>
 			</Routes>
-		</div>
+	
+			</div>
+			</div>
 	);
 }
 

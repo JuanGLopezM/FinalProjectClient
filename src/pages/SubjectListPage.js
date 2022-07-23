@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import React from "react";
 import AddSubject from '../components/AddSubject';
 import SubjectCard from '../components/SubjectCard';
 import { getAllSubjectsService } from '../services/subject.services';
@@ -28,8 +29,7 @@ function SubjectListPage() {
 	}, []);
 
 	return (
-
-        <div>
+        <div className="subjectListPage">
         <br></br>
         <br></br>
         <br></br>
@@ -48,6 +48,7 @@ function SubjectListPage() {
         <br></br>
              <AddSubject refreshSubjects={getAllSubjects} />
         </div>
+    
     );
 }
 

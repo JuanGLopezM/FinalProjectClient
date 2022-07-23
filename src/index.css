@@ -108,14 +108,38 @@ nav li {
   background-color: #dfeef9;
 }
 
+.road{
+  width:70em;
+  }
+
 .circulo{
-  /* width:50%;
-  border-radius: 30%; */
-  padding: 5em;
-  display: flex;
-  justify-content: space-around;
+  background-color: rgba(4, 4, 26, 0.651);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 255, 255, 0.973);
+  margin:auto;
+  margin-bottom: 30px;
+  box-shadow: 0px 0px 10px #00FFFF;
+}
+.roundFont h3{
+  color:rgb(243, 243, 243)
 }
 
-.road{
-width:70em;
+.center{
+   margin-top: 45%
 }
+
+/* .subjectListPage{
+  background-color: rgb(121, 120, 120);
+} */
+
+.colorNav{
+  background-color: rgba(4, 4, 26, 0.671)!important;
+  color: red!important;
+}
+
+.navbar-nav li a{
+  color: rgb(243, 243, 243)!important;
+}
+
