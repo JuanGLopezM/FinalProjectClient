@@ -5,7 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 import AddResource from '../components/AddResource';
 import EditResourceCard from '../components/EditResourceCard';
 import ResourceCard from '../components/ResourceCard';
-import ad from "../ad.png";
+import ad from "../ad1.png";
 import SearchBar from '../components/SearchBar';
 import SubjectData from "../Data.json";
 

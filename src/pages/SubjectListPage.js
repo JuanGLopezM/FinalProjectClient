@@ -6,7 +6,7 @@ import { getAllSubjectsService } from '../services/subject.services';
 import SearchBar from '../components/SearchBar';
 import SubjectData from "../Data.json";
 import whatLogo from "../whatLogo.png";
-import ad from "../ad.png";
+import ad from "../ad1.png";
 
 
 function SubjectListPage() {
@@ -48,7 +48,6 @@ function SubjectListPage() {
           <br></br>
           <br></br>
           <br></br>
-          <h2>MERN</h2>
           <br></br>
           <div className="row">
               {loading && <div>Loading...</div>}
