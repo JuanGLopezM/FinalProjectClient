@@ -3,10 +3,9 @@ import React from "react";
 import AddSubject from '../components/AddSubject';
 import SubjectCard from '../components/SubjectCard';
 import { getAllSubjectsService } from '../services/subject.services';
-<<<<<<< Updated upstream
-=======
+
 import whatLogo from "../whatLogo.png";
->>>>>>> Stashed changes
+
 
 function SubjectListPage() {
 	const [ subjects, setSubjects ] = useState([]);

@@ -4,22 +4,18 @@ import { useContext } from "react";
 import { AuthContext } from "./../context/auth.context";  
 import SearchBar from './SearchBar';
 import SubjectData from "../Data.json";
-<<<<<<< Updated upstream
-=======
+
 import CodeInLogo from "../CodeInLogo.png";
->>>>>>> Stashed changes
+
 
 function Navbar() {
   // eslint-disable-next-line
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
   return (
-<<<<<<< Updated upstream
-    <nav class="navbar  navbar-expand-lg rounded colorNav">
-    <SearchBar data={SubjectData} />
-      
-=======
+   
+
     <nav class="navbar navbar-expand-lg  rounded colorNav">
->>>>>>> Stashed changes
+
       
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
@@ -65,6 +61,7 @@ function Navbar() {
       
      
     </nav>
+  
   )
 }
 
