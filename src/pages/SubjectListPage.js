@@ -3,6 +3,10 @@ import React from "react";
 import AddSubject from '../components/AddSubject';
 import SubjectCard from '../components/SubjectCard';
 import { getAllSubjectsService } from '../services/subject.services';
+<<<<<<< Updated upstream
+=======
+import whatLogo from "../whatLogo.png";
+>>>>>>> Stashed changes
 
 function SubjectListPage() {
 	const [ subjects, setSubjects ] = useState([]);
@@ -33,7 +37,7 @@ function SubjectListPage() {
         <br></br>
         <br></br>
         <br></br>
-        <h1>What do you want to learn today?</h1>
+        <img src={whatLogo} alt="Logo" />
         <br></br>
         <br></br>
         <br></br>
