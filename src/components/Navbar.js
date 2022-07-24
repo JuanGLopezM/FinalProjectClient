@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";                    
 import { AuthContext } from "./../context/auth.context";  
 
-import CodeInLogo from "../CodeInLogo.png";
+import CodeInLogo from "../CodeInLogo2.png";
 
 
 function Navbar() {

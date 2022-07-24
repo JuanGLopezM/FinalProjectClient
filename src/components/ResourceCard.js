@@ -11,9 +11,9 @@ function ResourceCard({ title, tags, source, _id }) {
   return (
     <div>
       <ul class="list-group">
-        <li class="list-group-item">{inputTitle}</li>
-        <li class="list-group-item list-group-item-light">{inputTags}</li>
-        <a href={inputSource} class="list-group-item list-group-item-action list-group-item-info">{inputSource}</a>
+        <li class="list-group-item list-group-item-info font-weight-bold">{inputTitle}</li>
+        <li class="list-group-item list-group-item-light font-weight-light">{inputTags}</li>
+        <a href={inputSource} class="list-group-item list-group-item-action">{inputSource}</a>
       </ul>
     </div>
   );

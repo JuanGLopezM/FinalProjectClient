@@ -31,26 +31,33 @@ function EditSection({ setSection, SectionId, title, Tags, refreshSection }) {
         <div>
             {!isDeleted && (
                 <div>
-                <h3>Edit/Delete Section</h3>
-                <div class="form-row">
-                    <div class="col">
-                    <input type="text" name="inputTitle" class="form-control" placeholder="Title"  value={inputTitle} onChange={(e) => {setInputTitle(e.target.value); }}/>  
-                    </div> 
-                   
-                    <div class="col">                
-                    <input type="text" name="inputTags" class="form-control" placeholder="Tags" 
-                        value={inputTags}
-                        onChange={(e) => {
-                            setInputTags(e.target.value);
-                        }}
-                    />
-                        </div> 
-                   
-                     <div>
-                    <button onClick={handleEditSection} class="btn btn-outline-success">Edit</button>
-                    <button onClick={handleDeleteSection} class="btn btn-outline-danger">Delete</button>
-                    </div> 
-                </div>
+                    <h3>Edit/Delete Section</h3>
+                    <form onSubmit={handleEditSection}>
+                        <div class="form-row">
+                            <div class="col">
+                                <input 
+                                    type="text" 
+                                    name="inputTitle" 
+                                    class="form-control" 
+                                    placeholder="Title"  
+                                    value={inputTitle} 
+                                    onChange={(e) => {setInputTitle(e.target.value); }}
+                                />  
+                            </div> 
+                            <div class="col">                
+                                <input 
+                                    type="text" 
+                                    name="inputTags" 
+                                    class="form-control" 
+                                    placeholder="Tags" 
+                                    value={inputTags} 
+                                    onChange={(e) => { setInputTags(e.target.value);}}
+                                />
+                            </div> 
+                        </div>
+                        <button type="submit" class="btn btn-outline-success">Edit</button>
+                    </form>
+                <button onClick={handleDeleteSection} class="btn btn-outline-danger">Delete</button>
                 </div>
             )}
         </div>

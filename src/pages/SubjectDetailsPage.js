@@ -33,6 +33,16 @@ function SubjectDetailsPage(props) {
 	}, []);
 	console.log(subject);
 	return (
+		<>
+		    {/* <nav class="navbar navbar-expand-lg justify-content-center rounded colorNav">
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+            	    <ul class="navbar-nav">
+  						<li class="nav-item">
+           					<a class="nav-link rounded" href="/">{subject.title}</a>
+              			</li>
+  					</ul>
+  				</div>
+  			</nav> */}
 		<div className="wrapper">
 		<div className="firstCol">
 		<SearchBar data={SubjectData} />
@@ -71,6 +81,7 @@ function SubjectDetailsPage(props) {
           <img src={ad} alt="ad" />
           </div>
 		</div>
+		</>
 	);
 }
 export default SubjectDetailsPage;
