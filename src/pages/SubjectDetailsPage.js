@@ -52,10 +52,17 @@ function SubjectDetailsPage(props) {
                     return <SectionCard key={section._id} {...section} />;
                 })}
 			</div>
-			
+			<br></br>
+			<br></br>
+			<br></br>
 			<EditSubject setSubject={setSubject} refreshSubject={getSubject} SubjectId={subjectId} />
+			<br></br>
+			<br></br>
+			<br></br>
+			<br></br>
 			<AddSection refreshSubject={getSubject} SubjectId={subjectId} />
-
+			<br></br>
+			<br></br>
 			<Link to="/subjects">
 				<button class="btn btn-outline-info">Back to Materials</button>
 			</Link>

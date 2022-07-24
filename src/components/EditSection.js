@@ -18,7 +18,7 @@ function EditSection({ setSection, SectionId, title, Tags, refreshSection }) {
             console.log('Holi')
         }
     };
-    const handleDeleteSubject = async (e) => {
+    const handleDeleteSection = async (e) => {
         try {
             await deleteSectionService(SectionId);
             setIsDeleted(true);
@@ -30,22 +30,27 @@ function EditSection({ setSection, SectionId, title, Tags, refreshSection }) {
     return (
         <div>
             {!isDeleted && (
-                <div className="ResourceCard card">
-                    <p>Section</p>
-                    <input
-                        value={inputTitle}
-                        onChange={(e) => {
-                            setInputTitle(e.target.value);
-                        }}
-                    />
-                    <input
+                <div>
+                <h3>Edit/Delete Section</h3>
+                <div class="form-row">
+                    <div class="col">
+                    <input type="text" name="inputTitle" class="form-control" placeholder="Title"  value={inputTitle} onChange={(e) => {setInputTitle(e.target.value); }}/>  
+                    </div> 
+                   
+                    <div class="col">                
+                    <input type="text" name="inputTags" class="form-control" placeholder="Tags" 
                         value={inputTags}
                         onChange={(e) => {
                             setInputTags(e.target.value);
                         }}
                     />
-                    <button onClick={handleEditSection} class="btn btn-outline-primary">Edit</button>
-                    <button onClick={handleDeleteSubject} class="btn btn-outline-danger">Delete</button>
+                        </div> 
+                   
+                     <div>
+                    <button onClick={handleEditSection} class="btn btn-outline-success">Edit</button>
+                    <button onClick={handleDeleteSection} class="btn btn-outline-danger">Delete</button>
+                    </div> 
+                </div>
                 </div>
             )}
         </div>

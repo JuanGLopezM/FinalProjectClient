@@ -7,7 +7,7 @@ function AddResource(props) {
 	const [ title, setTitle ] = useState('');
 	const [ tags, setTags ] = useState('');
 	const [ source, setSource ] = useState('');
-	const [ isLoading, setIsLoading ] = useState(false);
+	
 	const {id}= useParams()
 	const sectionId = id;
 	console.log('ID:', sectionId)
@@ -22,14 +22,14 @@ function AddResource(props) {
 		const requestBody = { title, tags, source, sectionId };
 		console.log(requestBody)
 
-		setIsLoading(true);
+		
 		try {
 			await addNewResourceService(requestBody);
 			// Reset the state to clear the inputs
 			setTitle('');
 			setTags('');
 			setSource('');
-			setIsLoading(false);
+			
 			props.refreshSection();
 		} catch (err) {
 			console.log(err);

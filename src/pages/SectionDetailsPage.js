@@ -3,6 +3,7 @@ import { getSectionDetailsService } from '../services/section.services';
 import EditSection from '../components/EditSection';
 import { Link, useParams } from 'react-router-dom';
 import AddResource from '../components/AddResource';
+import EditResourceCard from '../components/EditResourceCard';
 import ResourceCard from '../components/ResourceCard';
 import ad from "../ad.png";
 import SearchBar from '../components/SearchBar';
@@ -42,12 +43,28 @@ function SectionDetailsPage(props) {
                     {/* <p>Resources: {subject.resources}</p> */}
                 </div>
             )}
-            <EditSection setSection={setSection} SectionId={sectionId} refreshSection={getSection}/>
-            <AddResource refreshSection={getSection} SectionId={sectionId} />
+
             {section &&
                 section.resources.map((resource) => {
                     return <ResourceCard key={resource._id} {...resource} />;
                 })}
+            <br></br>
+            <br></br>
+            <EditSection setSection={setSection} SectionId={sectionId} refreshSection={getSection}/>
+            <br></br>
+            <br></br>
+            <br></br>
+            <AddResource refreshSection={getSection} SectionId={sectionId} />
+            <br></br>
+            <br></br>
+            <br></br>
+            {section &&
+                section.resources.map((resource) => {
+                    return <EditResourceCard key={resource._id} {...resource} />;
+                })}
+                <br></br>
+                <br></br>
+                <br></br>
             <Link to="/subjects">
                 <button class="btn btn-outline-info">Back to Materials</button>
             </Link>

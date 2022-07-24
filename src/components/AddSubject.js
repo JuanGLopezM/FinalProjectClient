@@ -1,10 +1,6 @@
 import { useState } from 'react';
 import { addNewSubjectService } from '../services/subject.services.js';
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
 
 function AddSubject(props) {
     const [ title, setTitle ] = useState('');
