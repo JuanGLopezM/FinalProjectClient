@@ -114,8 +114,8 @@ nav li {
 
 .circulo{
   background-color: rgba(4, 4, 26, 0.651);
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   border: 1px solid rgba(0, 255, 255, 0.973);
   margin:auto;
@@ -147,4 +147,21 @@ nav li {
   left: 23%;
   position: relative;
 }
-
+.wrapper{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 50px;
+  grid-auto-rows: minmax(100px, auto);
+}
+.firstCol{
+  grid-column: 1;
+  grid-row: 1 / 5;
+}
+.secondCol{
+  grid-column:  2/ 6;
+  grid-row: 1 / 5;
+}
+.thirdCol{
+  grid-column: 6;
+  grid-row: 1 / 5;
+}

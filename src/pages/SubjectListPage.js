@@ -3,8 +3,10 @@ import React from "react";
 import AddSubject from '../components/AddSubject';
 import SubjectCard from '../components/SubjectCard';
 import { getAllSubjectsService } from '../services/subject.services';
-
+import SearchBar from '../components/SearchBar';
+import SubjectData from "../Data.json";
 import whatLogo from "../whatLogo.png";
+import ad from "../ad.png";
 
 
 function SubjectListPage() {
@@ -32,25 +34,36 @@ function SubjectListPage() {
 	}, []);
 
 	return (
-        <div className="subjectListPage">
-        <br></br>
-        <br></br>
-        <br></br>
-        <img src={whatLogo} alt="Logo" />
-        <br></br>
-        <br></br>
-        <br></br>
-        <h2>MERN</h2>
-        <br></br>
-        <div className="row">
-        {loading && <div>Loading...</div>}
-             { !loading && subjects.map((subject) => <SubjectCard key={subject._id} {...subject} />  )}
-        </div>
-        <br></br>
-        <br></br>
-        <br></br>
-             <AddSubject refreshSubjects={getAllSubjects} />
-        </div>
+          <div className="wrapper">
+      
+          <div className="firstCol">
+          <p>Searchbar</p>
+          <SearchBar data={SubjectData} />
+          </div>
+          <div className="secondCol">
+          <br></br>
+          <br></br>
+          <br></br>
+          <img src={whatLogo} alt="Logo" />
+          <br></br>
+          <br></br>
+          <br></br>
+          <h2>MERN</h2>
+          <br></br>
+          <div className="row">
+              {loading && <div>Loading...</div>}
+              { !loading && subjects.map((subject) => <SubjectCard key={subject._id} {...subject} />  )}
+          </div>
+          <br></br>
+          <br></br>
+          <br></br>
+          <AddSubject refreshSubjects={getAllSubjects} />
+          </div>
+          <div class="thirdCol">
+          <img src={ad} alt="ad" />
+          </div>
+          </div>
+       
     
     );
 }
