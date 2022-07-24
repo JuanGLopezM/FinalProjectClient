@@ -37,7 +37,7 @@ function SubjectListPage() {
           <div className="wrapper">
       
           <div className="firstCol">
-          <p>Searchbar</p>
+        
           <SearchBar data={SubjectData} />
           </div>
           <div className="secondCol">

@@ -4,6 +4,9 @@ import EditSubject from '../components/EditSubject';
 import { Link, useParams } from 'react-router-dom';
 import AddSection from '../components/AddSection';
 import SectionCard from '../components/SectionCard';
+import ad from "../ad.png";
+import SearchBar from '../components/SearchBar';
+import SubjectData from "../Data.json";
 
 function SubjectDetailsPage(props) {
 	const [subject, setSubject] = useState(null);
@@ -30,7 +33,11 @@ function SubjectDetailsPage(props) {
 	}, []);
 	console.log(subject);
 	return (
-		<div className="ProjectDetails">
+		<div className="wrapper">
+		<div className="firstCol">
+		<SearchBar data={SubjectData} />
+        </div>
+		<div className="secondCol">
 		{subject && (
 				<div className="ResourceCard card">
 					<h1>{subject.title}</h1>
@@ -52,6 +59,10 @@ function SubjectDetailsPage(props) {
 			<Link to="/subjects">
 				<button class="btn btn-outline-info">Back to Materials</button>
 			</Link>
+			</div>
+			<div class="thirdCol">
+          <img src={ad} alt="ad" />
+          </div>
 		</div>
 	);
 }

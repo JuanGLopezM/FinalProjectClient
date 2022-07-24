@@ -29,7 +29,7 @@ function AddSubject(props) {
     };
     return (
         <div >
-        <h3>Add Subject</h3>
+        <h3>Add New Subject</h3>
         <form onSubmit={handleSubmit}>
           <div class="form-row">
             <div class="col">

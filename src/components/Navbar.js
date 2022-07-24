@@ -30,12 +30,26 @@ function Navbar() {
               <li class="nav-item">
                 <a class="nav-link rounded" href="/profile">Profile</a>
               </li>
+            </>)
+            :(<></>)
+          }
+            </ul>
+            <ul className="nav navBarLogo">
+        <li>
+        <img src={CodeInLogo} alt="Logo" />
+        </li>
+        </ul>
+
+
+
+            <ul class="navbar-nav ml-auto">
+            {isLoggedIn
+            ? (<>
               <li class="nav-item ">
                 <button class="rounded" onClick={logOutUser}>Logout</button>
                 {/* <a class="nav-link" href={logOutUser}>Logout </a> */}
               </li>
-            </>)
-            :
+            </>):
             (<>
               <li class="nav-item">
                 <a class="nav-link" href="/signup">Signup </a>
@@ -44,6 +58,9 @@ function Navbar() {
                 <a class="nav-link" href="/login">Login </a>
               </li>
             </>)
+
+
+            
           }
 
           {/* <form class="form-inline my-2 my-lg-0 navbar-right ml-auto">
@@ -51,12 +68,15 @@ function Navbar() {
         <button class="btn btn-outline-success my-2 my-sm-0 navbar-right" type="submit">Search</button>
       </form> */}
         </ul>
-        <ul className="nav navBarLogo ">
+        
+        {/* <ul className="nav navBarLogo ">
         <li>
         <img src={CodeInLogo} alt="Logo" />
         </li>
-        </ul>
-      <SearchBar data={SubjectData} />
+        </ul> */}
+     
+        
+      {/* <SearchBar data={SubjectData} /> */}
       </div>
       
      

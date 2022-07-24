@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { updateResourceService, deleteResourceService } from '../services/resources.services';
-function ResourceCard({ tags, source, _id }) {
+function ResourceCard({ title, tags, source, _id }) {
+    const [ inputTitle, setInputTitle ] = useState(title);
     const [ inputTags, setInputTags ] = useState(tags);
     const [ inputSource, setImputSource ] = useState(source);
     const [ isDeleted, setIsDeleted ] = useState(false);
@@ -8,7 +9,7 @@ function ResourceCard({ tags, source, _id }) {
     
     const handleSubmitResource = async (e) => {
         try {
-            const requestBody = { inputTags, inputSource };
+            const requestBody = { inputTitle, inputTags, inputSource };
             await updateResourceService(idResource, requestBody);
         } catch (err) {
             console.log(err);
@@ -28,7 +29,15 @@ function ResourceCard({ tags, source, _id }) {
             {!isDeleted && (
                 <div className="ResourceCard card">
                     <p>Resource</p>
-                    <p>{idResource.tags}</p>
+                    <h4>{inputTitle}</h4>
+                    <h4>{inputTags}</h4>
+                    <h4>{inputSource}</h4>
+                    <input
+                        value={inputTitle}
+                        onChange={(e) => {
+                            setInputTitle(e.target.value);
+                        }}
+                    />                   
                     <input
                         value={inputTags}
                         onChange={(e) => {
