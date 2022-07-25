@@ -4,7 +4,7 @@ import EditSubject from '../components/EditSubject';
 import { Link, useParams } from 'react-router-dom';
 import AddSection from '../components/AddSection';
 import SectionCard from '../components/SectionCard';
-import ad from "../ad1.png";
+import ad from "../adAPIThieves.png";
 import SearchBar from '../components/SearchBar';
 import SubjectData from "../Data.json";
 function SubjectDetailsPage(props) {
@@ -73,6 +73,10 @@ function SubjectDetailsPage(props) {
             </Link>
             </div>
             <div class="thirdCol">
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
           <img src={ad} alt="ad" />
           </div>
         </div>

@@ -5,7 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 import AddResource from '../components/AddResource';
 import EditResourceCard from '../components/EditResourceCard';
 import ResourceCard from '../components/ResourceCard';
-import ad from "../ad1.png";
+import ad from "../adAPIThieves.png";
 import SearchBar from '../components/SearchBar';
 import SubjectData from "../Data.json";
 function SectionDetailsPage(props) {
@@ -67,6 +67,10 @@ function SectionDetailsPage(props) {
             </Link>
             </div>
             <div class="thirdCol">
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
           <img src={ad} alt="ad" />
           </div>
         </div>

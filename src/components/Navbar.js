@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "./../context/auth.context";
-import CodeInLogo from "../CodeInLogo2.png";
+import CodeInLogo from "../CodeInLogo3.png";
 function Navbar() {
   // eslint-disable-next-line
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);

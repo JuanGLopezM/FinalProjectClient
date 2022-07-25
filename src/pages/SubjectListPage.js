@@ -6,7 +6,7 @@ import { getAllSubjectsService } from '../services/subject.services';
 import SearchBar from '../components/SearchBar';
 import SubjectData from "../Data.json";
 import whatLogo from "../whatLogo.png";
-import ad from "../ad1.png";
+import ad from "../adAPIThieves.png";
 
 function SubjectListPage() {
     const [ subjects, setSubjects ] = useState([]);
@@ -53,6 +53,10 @@ function SubjectListPage() {
           <AddSubject refreshSubjects={getAllSubjects} />
           </div>
           <div class="thirdCol">
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
           <img src={ad} alt="ad" />
           </div>
           </div>

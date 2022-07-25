@@ -3,9 +3,12 @@ import { Divider } from '@mui/material';
 import { useState, useEffect } from 'react';
 // eslint-disable-next-line
 import { Link, useParams } from 'react-router-dom';
+import ad from "../adAPIThieves.png";
 import AddResource from '../components/AddResource';
-import ResourceCard from '../components/ResourceCard';
+import ProfileResourceCard from '../components/ProfileResourceCard';
 import { getProfileDetailsService } from '../services/profile.services';
+import SearchBar from '../components/SearchBar';
+import SubjectData from "../Data.json";
 
 function ProfilePage (props){
     const [profile, setProfile] = useState(null);
@@ -25,14 +28,31 @@ function ProfilePage (props){
     }, []);
     return (
         <>
-            <h3>Perfil</h3>
-            {profile &&
+        <div className="wrapper">
+            <div className="firstCol">
+                <SearchBar data={SubjectData} />
+            </div>
+            <div className="secondCol">
+                <h3>Perfil</h3>
+                {profile &&
                 profile.pending.map((pResource) => {
-                    return <ResourceCard key={pResource._id} {...pResource} />;
-
-            })}
-            <AddResource refreshUser={getProfile} /> 
-        </>
+                    return (
+                        <>
+                        <ProfileResourceCard key={pResource._id} {...pResource} />
+                        </>
+                    )
+                })}
+                <AddResource refreshUser={getProfile} />
+            </div>
+            <div class="thirdCol">
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+                <img src={ad} alt="ad" />
+            </div>
+        </div>
+    </>
     )
 }
 export default ProfilePage;
