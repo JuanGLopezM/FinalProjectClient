@@ -6,7 +6,6 @@ function EditSection({ setSection, SectionId, title, Tags, refreshSection }) {
     const [inputTags, setInputTags] = useState('');
     const [isDeleted, setIsDeleted] = useState(false);
     const redirect = useNavigate()
-    
     const handleEditSection = async (e) => {
         try {
             const updatedSection = { inputTitle, inputTags };
@@ -15,10 +14,10 @@ function EditSection({ setSection, SectionId, title, Tags, refreshSection }) {
             refreshSection()
         } catch (err) {
             console.log(err);
-            
+            console.log('Holi')
         }
     };
-    const handleDeleteSubject = async (e) => {
+    const handleDeleteSection = async (e) => {
         try {
             await deleteSectionService(SectionId);
             setIsDeleted(true);
@@ -30,22 +29,34 @@ function EditSection({ setSection, SectionId, title, Tags, refreshSection }) {
     return (
         <div>
             {!isDeleted && (
-                <div className="ResourceCard card">
-                    <p>Section</p>
-                    <input
-                        value={inputTitle}
-                        onChange={(e) => {
-                            setInputTitle(e.target.value);
-                        }}
-                    />
-                    <input
-                        value={inputTags}
-                        onChange={(e) => {
-                            setInputTags(e.target.value);
-                        }}
-                    />
-                    <button onClick={handleEditSection} class="btn btn-outline-primary">Edit</button>
-                    <button onClick={handleDeleteSubject} class="btn btn-outline-danger">Delete</button>
+                <div>
+                    <h3>Edit/Delete Section</h3>
+                    <form onSubmit={handleEditSection}>
+                        <div class="form-row">
+                            <div class="col">
+                                <input
+                                    type="text"
+                                    name="inputTitle"
+                                    class="form-control"
+                                    placeholder="Title"
+                                    value={inputTitle}
+                                    onChange={(e) => {setInputTitle(e.target.value); }}
+                                />
+                            </div>
+                            <div class="col">
+                                <input
+                                    type="text"
+                                    name="inputTags"
+                                    class="form-control"
+                                    placeholder="Tags"
+                                    value={inputTags}
+                                    onChange={(e) => { setInputTags(e.target.value);}}
+                                />
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-outline-success">Edit</button>
+                    </form>
+                <button onClick={handleDeleteSection} class="btn btn-outline-danger">Delete</button>
                 </div>
             )}
         </div>
