@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState , useContext } from 'react';
+import { AuthContext } from "./../context/auth.context";
 import { addNewFavoriteService } from '../services/favorite.services';
 import { updateResourceService, deleteResourceService } from '../services/resources.services';
-function EditResourceCard({ title, tags, source, _id, user }) {
+function EditResourceCard({ title, tags, source, _id }) {
     const [ inputTitle, setInputTitle ] = useState(title);
     const [ inputTags, setInputTags ] = useState(tags);
     const [ inputSource, setImputSource ] = useState(source);
     const [ isDeleted, setIsDeleted ] = useState(false);
     const idResource = _id;
+    const { user } = useContext(AuthContext);
     console.log('USER:', user)
     
     const handleEditResource = async (e) => {
@@ -27,9 +29,9 @@ function EditResourceCard({ title, tags, source, _id, user }) {
     };
     const handleAddFavorite = async (e) => {
         try {
-            const requestBody = { idResource };
+            const requestBody = { user, idResource };
             console.log('USER:', user)
-            await addNewFavoriteService(idResource, requestBody);
+            await addNewFavoriteService(requestBody);
         } catch (err) {
             console.log(err);
         }
