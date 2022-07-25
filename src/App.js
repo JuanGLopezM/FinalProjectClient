@@ -56,7 +56,7 @@ function App() {
                 />
                  <Route
                     exact
-                    path="/favorites"
+                    path="/profile"
                     element={
                         <PrivateRoute>
                             <ProfilePage />

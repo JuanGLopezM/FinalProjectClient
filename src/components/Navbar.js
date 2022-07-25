@@ -21,7 +21,7 @@ function Navbar() {
                 <a class="nav-link rounded" href="/subjects">Materials</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link rounded" href="/favorites">Favorites</a>
+                <a class="nav-link rounded" href="/profile">Profile</a>
               </li>
             </>)
             :(<></>)

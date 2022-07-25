@@ -5,34 +5,33 @@ import { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import AddResource from '../components/AddResource';
 import ResourceCard from '../components/ResourceCard';
-import { getFavoritesDetailsService } from '../services/favorite.services';
+import { getProfileDetailsService } from '../services/profile.services';
 
 function ProfilePage (props){
-    const [favorites, setFavorites] = useState(null);
-    const getFavorites = async () => {
+    const [profile, setProfile] = useState(null);
+    const getProfile = async () => {
         localStorage.getItem('authToken');
         try {
-            const response = await getFavoritesDetailsService();
+            const response = await getProfileDetailsService();
             console.log(response)
-            setFavorites(response.data);
+            setProfile(response.data);
         } catch (err) {
             console.log(err);
         }
     };
     useEffect(() => {
-        getFavorites();
+        getProfile();
         // eslint-disable-next-line
     }, []);
     return (
         <>
             <h3>Perfil</h3>
-          
-            {favorites &&
-                favorites.pending.map((pResource) => {
+            {profile &&
+                profile.pending.map((pResource) => {
                     return <ResourceCard key={pResource._id} {...pResource} />;
-                    
+
             })}
-            <AddResource refreshUser={getFavorites} /> 
+            <AddResource refreshUser={getProfile} /> 
         </>
     )
 }

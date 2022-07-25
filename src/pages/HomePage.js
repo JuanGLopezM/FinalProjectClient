@@ -2,9 +2,9 @@ import front from '../components/frontend_page-0001.jpg'
 import back from '../components/backend_page-0001.jpg'
 import { useState } from 'react';
 function HomePage() {
-  const [first, setfirst] = useState(true)
+  const [first, setFirst] = useState(true)
   const handleState = () => {
-    setfirst(!first)
+    setFirst(!first)
   }
   return (
     <div>

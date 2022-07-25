@@ -1,13 +1,13 @@
 import service from './service';
 
-const URL = '/favorites';
+const URL = '/profile';
 
 //add new favorite
-const addNewFavoriteService = (newFavorite) => {
+const addNewProfileService = (newFavorite) => {
 	return service.post(`${URL}`, newFavorite);
 };
 
-const getFavoritesDetailsService = () => {
+const getProfileDetailsService = () => {
     return service.get(`${URL}`);
 };
 
@@ -21,4 +21,4 @@ const getFavoritesDetailsService = () => {
 // 	return service.put(`${URL}/${id}`, updatedResource);
 // };
 
-export { addNewFavoriteService, getFavoritesDetailsService };
+export { addNewProfileService, getProfileDetailsService };

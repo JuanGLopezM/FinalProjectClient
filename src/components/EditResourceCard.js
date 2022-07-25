@@ -1,6 +1,6 @@
 import React, { useState , useContext } from 'react';
 import { AuthContext } from "./../context/auth.context";
-import { addNewFavoriteService } from '../services/favorite.services';
+import { addNewProfileService } from '../services/profile.services';
 import { updateResourceService, deleteResourceService } from '../services/resources.services';
 function EditResourceCard({ title, tags, source, _id }) {
     const [ inputTitle, setInputTitle ] = useState(title);
@@ -31,7 +31,7 @@ function EditResourceCard({ title, tags, source, _id }) {
         try {
             const requestBody = { user, idResource };
             console.log('USER:', user)
-            await addNewFavoriteService(requestBody);
+            await addNewProfileService(requestBody);
         } catch (err) {
             console.log(err);
         }
