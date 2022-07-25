@@ -7,6 +7,10 @@ const addNewFavoriteService = (newFavorite) => {
 	return service.post(`${URL}`, newFavorite);
 };
 
+const getFavoritesDetailsService = () => {
+    return service.get(`${URL}`);
+};
+
 //delete resource
 // const deleteResourceService = (id) => {
 // 	return service.delete(`${URL}/${id}`);
@@ -17,4 +21,4 @@ const addNewFavoriteService = (newFavorite) => {
 // 	return service.put(`${URL}/${id}`, updatedResource);
 // };
 
-export { addNewFavoriteService };
+export { addNewFavoriteService, getFavoritesDetailsService };

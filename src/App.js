@@ -10,8 +10,10 @@ import LoginPage from './pages/LoginPage';
 import PrivateRoute from './components/PrivateRoute';
 import AnonRoute from './components/AnonRoute';
 import background from "./05.jpg";
+import ProfilePage from './pages/ProfilePage';
 // eslint-disable-next-line
 import SearchBar from './components/SearchBar';
+
 function App() {
     return (
         <div style={{ backgroundImage: `url(${background})`,
@@ -49,6 +51,15 @@ function App() {
                     element={
                         <PrivateRoute>
                             <SectionDetailsPage />
+                        </PrivateRoute>
+                    }
+                />
+                 <Route
+                    exact
+                    path="/favorites"
+                    element={
+                        <PrivateRoute>
+                            <ProfilePage />
                         </PrivateRoute>
                     }
                 />

@@ -6,6 +6,8 @@ import CodeInLogo from "../CodeInLogo2.png";
 function Navbar() {
   // eslint-disable-next-line
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
+  // eslint-disable-next-line
+
   return (
     <nav class="navbar navbar-expand-lg  rounded colorNav">
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -19,7 +21,7 @@ function Navbar() {
                 <a class="nav-link rounded" href="/subjects">Materials</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link rounded" href="/profile">Profile</a>
+                <a class="nav-link rounded" href="/favorites">Favorites</a>
               </li>
             </>)
             :(<></>)
