@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 // eslint-disable-next-line
 import { Link, useParams } from 'react-router-dom';
 import ad from "../adAPIThieves.png";
-import AddResource from '../components/AddResource';
+import AddExternalResource from '../components/AddExternalResource';
 import ProfileResourceCard from '../components/ProfileResourceCard';
 import { getProfileDetailsService } from '../services/profile.services';
 import SearchBar from '../components/SearchBar';
@@ -45,7 +45,15 @@ function ProfilePage(props) {
                             )
                         })}
                     <hr></hr>
-                    <AddResource refreshUser={getProfile} />
+                    {profile &&
+                        profile.pendingExternal.map((pResource) => {
+                            return (
+                                <>
+                                    <ProfileResourceCard key={pResource._id} {...pResource} getProfile={getProfile} />
+                                </>
+                            )
+                        })}
+                    <AddExternalResource refreshUser={getProfile} />
                 </div>
                 <div class="thirdCol">
                     <br></br>
