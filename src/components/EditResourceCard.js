@@ -41,7 +41,6 @@ function EditResourceCard({ title, tags, source, _id }) {
         <div>
             {!isDeleted && (
               <div>
-                <h3>Edit/Delete Resource</h3>
                 <form onSubmit={handleEditResource}>
                   <div class="form-row">
                     <div class="col">
@@ -77,7 +76,7 @@ function EditResourceCard({ title, tags, source, _id }) {
                   </div>
                     <button type="submit" class="btn btn-outline-success">Edit</button>
                 </form>
-                  <button onClick={handleDeleteResource} class="btn btn-outline-danger">Delete</button>
+                  <button onClick={handleDeleteResource} class="btn btn-outline-danger">Delete from DB</button>
                   <button onClick={handleAddFavorite} class="btn btn-outline-primary">Add favorite</button>
               </div>
             )}

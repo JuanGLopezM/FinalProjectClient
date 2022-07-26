@@ -60,11 +60,12 @@ function SubjectDetailsPage(props) {
             <br></br>
             <br></br>
             <br></br>
+            <hr></hr>
             <EditSubject setSubject={setSubject} refreshSubject={getSubject} SubjectId={subjectId} />
             <br></br>
             <br></br>
             <br></br>
-            <br></br>
+            <hr></hr>
             <AddSection refreshSubject={getSubject} SubjectId={subjectId} />
             <br></br>
             <br></br>

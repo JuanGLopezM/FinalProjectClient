@@ -10,10 +10,12 @@ import { getProfileDetailsService } from '../services/profile.services';
 import SearchBar from '../components/SearchBar';
 import SubjectData from "../Data.json";
 
-function ProfilePage (props){
+function ProfilePage(props) {
     const [profile, setProfile] = useState(null);
+
     const getProfile = async () => {
         localStorage.getItem('authToken');
+        console.log("Render")
         try {
             const response = await getProfileDetailsService();
             console.log(response)
@@ -28,31 +30,32 @@ function ProfilePage (props){
     }, []);
     return (
         <>
-        <div className="wrapper">
-            <div className="firstCol">
-                <SearchBar data={SubjectData} />
+            <div className="wrapper">
+                <div className="firstCol">
+                    <SearchBar data={SubjectData} />
+                </div>
+                <div className="secondCol">
+                    <h3>Perfil</h3>
+                    {profile &&
+                        profile.pending.map((pResource) => {
+                            return (
+                                <>
+                                    <ProfileResourceCard key={pResource._id} {...pResource} getProfile={getProfile} />
+                                </>
+                            )
+                        })}
+                    <hr></hr>
+                    <AddResource refreshUser={getProfile} />
+                </div>
+                <div class="thirdCol">
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <img src={ad} alt="ad" />
+                </div>
             </div>
-            <div className="secondCol">
-                <h3>Perfil</h3>
-                {profile &&
-                profile.pending.map((pResource) => {
-                    return (
-                        <>
-                        <ProfileResourceCard key={pResource._id} {...pResource} />
-                        </>
-                    )
-                })}
-                <AddResource refreshUser={getProfile} />
-            </div>
-            <div class="thirdCol">
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-                <img src={ad} alt="ad" />
-            </div>
-        </div>
-    </>
+        </>
     )
 }
 export default ProfilePage;

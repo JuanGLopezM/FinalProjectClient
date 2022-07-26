@@ -46,15 +46,16 @@ function SectionDetailsPage(props) {
                     return <ResourceCard key={resource._id} {...resource} />;
                 })}
             <br></br>
-            <br></br>
+            <hr></hr>
             <EditSection setSection={setSection} SectionId={sectionId} refreshSection={getSection}/>
             <br></br>
             <br></br>
-            <br></br>
+            <hr></hr>
             <AddResource refreshSection={getSection} SectionId={sectionId} />
             <br></br>
             <br></br>
-            <br></br>
+            <hr></hr>
+            <h3>Edit/Delete Resource</h3>
             {section &&
                 section.resources.map((resource) => {
                     return <EditResourceCard key={resource._id} {...resource} />;
