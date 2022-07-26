@@ -31,23 +31,34 @@ function LoginPage(props) {
 	};
 
 	return (
-		<div className="LoginPage">
+		<>
+		<br></br>
+		<br></br>
+		<br></br>
+		<br></br>
+		<br></br>
+		<br></br>
+		<div className="wrapper wrapper3 fadeInDown">
+		<br></br>
+	
+		
+		  <div id="formContent" className="loginCol">
+		  <br></br>
 			<h1>Login</h1>
 
 			<form onSubmit={handleLoginSubmit}>
-				<label>Email:</label>
-				<input type="text" name="email" value={email} onChange={handleEmail} />
-
-				<label>Password:</label>
-				<input type="password" name="password" value={password} onChange={handlePassword} />
-
-				<button type="submit">Login</button>
+				<input type="text" id="login" className="fadeIn first" name="email" placeholder="Email" value={email} onChange={handleEmail} />
+				<input type="password" id="password" className="fadeIn second" name="password" placeholder="Password" value={password} onChange={handlePassword} />
+				<input type="submit" className="fadeIn third" value="Login" />
 			</form>
+
 			{errorMessage && <p className="error-message">{errorMessage}</p>}
 
-			<p>Don't have an account yet?</p>
-			<Link to={'/signup'}> Sign Up</Link>
+			<p id="formFooter">Don't have an account yet?<Link to={'/signup'}>    <br></br>Sign Up</Link></p>
+
+		  </div>
 		</div>
+		</>
 	);
 }
 

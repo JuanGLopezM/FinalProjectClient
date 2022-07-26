@@ -15,6 +15,7 @@ import background from "./05.jpg";
 import SearchBar from './components/SearchBar';  
 
 function App() {
+<<<<<<< Updated upstream
 	return (
 		<div style={{ backgroundImage: `url(${background})`,
 		backgroundRepeat: 'repeat-y', backgroundSize: "cover", backgroundAttachment: "fixed", overflow: 'hidden'}}>
@@ -48,6 +49,39 @@ function App() {
 				/>
 
 				<Route
+=======
+    return (
+        <div style={{ backgroundImage: `url(${background})`,
+        backgroundRepeat: 'no-repeat', minHeight:"940px", backgroundSize: "cover", backgroundAttachment: "fixed"}}>
+        <div className="App">
+            <Navbar />
+            {/* <SearchBar placeholder="Enter the Subject" data={SubjectData}/> */}
+            <Routes>
+                <Route exact path="/" element={
+                        <PrivateRoute>
+                            <HomePage />
+                        </PrivateRoute>
+                        } />
+                <Route
+                    exact
+                    path="/subjects"
+                    element={
+                        <PrivateRoute>
+                            <SubjectListPage />
+                        </PrivateRoute>
+                    }
+                />
+                <Route
+                    exact
+                    path="/subjects/:id"
+                    element={
+                        <PrivateRoute>
+                            <SubjectDetailsPage />
+                        </PrivateRoute>
+                    }
+                />
+                <Route
+>>>>>>> Stashed changes
                     exact
                     path="/sections/:id"
                     element={
