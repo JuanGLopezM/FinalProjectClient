@@ -3,16 +3,16 @@ import React from "react";
 import AddSubject from '../components/AddSubject';
 import SubjectCard from '../components/SubjectCard';
 import { getAllSubjectsService } from '../services/subject.services';
-import SearchBar from '../components/SearchBar';
-import SubjectData from "../Data.json";
+// import SearchBar from '../components/SearchBar';
+// import SubjectData from "../Data.json";
 import whatLogo from "../whatLogo.png";
 import ad from "../adAPIThieves.png";
-
 function SubjectListPage() {
     const [ subjects, setSubjects ] = useState([]);
     const [ loading, setLoading ] = useState(true);
      // eslint-disable-next-line
      const [ filter , setFilter ] = useState([]);
+     const [searchTerm, SetSearchTerm] = useState('')
     const getAllSubjects = async () => {
         // Send the token through the request "Authorization" Headers
         try {
@@ -32,7 +32,12 @@ function SubjectListPage() {
     return (
           <div className="wrapper">
           <div className="firstCol">
-          <SearchBar data={SubjectData} />
+          {/* <SearchBar data={SubjectData} /> */}
+            <div>
+                <input type="text" placeholder="Search" onChange={event => {SetSearchTerm(event.target.value)}}/>
+            </div>
+            <br></br>
+            <img src={ad} alt="ad" />
           </div>
           <div className="secondCol">
           <br></br>
@@ -45,7 +50,16 @@ function SubjectListPage() {
           <br></br>
           <div className="row">
               {loading && <div>Loading...</div>}
-              { !loading && subjects.map((subject) => <SubjectCard key={subject._id} {...subject} />  )}
+              { !loading && subjects.filter((subjectSearched)=>{
+                if(searchTerm == "" ) {
+                    return subjectSearched
+                }else if(subjectSearched.title.toLowerCase().includes(searchTerm.toLowerCase())){
+                    return subjectSearched
+                }
+              }).map((subject) => {
+                return <SubjectCard key={subject._id} {...subject} />
+              }
+              )}
           </div>
           <br></br>
           <br></br>

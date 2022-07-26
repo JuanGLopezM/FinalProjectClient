@@ -6,12 +6,13 @@ import AddResource from '../components/AddResource';
 import EditResourceCard from '../components/EditResourceCard';
 import ResourceCard from '../components/ResourceCard';
 import ad from "../adAPIThieves.png";
-import SearchBar from '../components/SearchBar';
-import SubjectData from "../Data.json";
+// import SearchBar from '../components/SearchBar';
+// import SubjectData from "../Data.json";
 function SectionDetailsPage(props) {
     const [section, setSection] = useState(null);
     const { id } = useParams();
     const sectionId = id;
+    const [searchTerm, SetSearchTerm] = useState('')
     console.log("props", props)
     const getSection = async () => {
         localStorage.getItem('authToken');
@@ -31,7 +32,12 @@ function SectionDetailsPage(props) {
     return (
         <div className="wrapper">
         <div className="firstCol">
-        <SearchBar data={SubjectData} />
+        {/* <SearchBar data={SubjectData} /> */}
+            <div>
+                <input type="text" placeholder="Search" onChange={event => {SetSearchTerm(event.target.value)}}/>
+            </div>
+            <br></br>
+            <img src={ad} alt="ad" />
         </div>
         <div className="secondCol">
             {section && (
@@ -42,7 +48,13 @@ function SectionDetailsPage(props) {
                 </div>
             )}
             {section &&
-                section.resources.map((resource) => {
+                section.resources.filter((resourceSearched)=>{
+                if(searchTerm == "" ) {
+                    return resourceSearched
+                }else if(resourceSearched.title.toLowerCase().includes(searchTerm.toLowerCase())){
+                    return resourceSearched
+                }
+              }).map((resource) => {
                     return <ResourceCard key={resource._id} {...resource} />;
                 })}
             <br></br>

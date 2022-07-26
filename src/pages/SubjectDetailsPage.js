@@ -5,12 +5,13 @@ import { Link, useParams } from 'react-router-dom';
 import AddSection from '../components/AddSection';
 import SectionCard from '../components/SectionCard';
 import ad from "../adAPIThieves.png";
-import SearchBar from '../components/SearchBar';
-import SubjectData from "../Data.json";
+// import SearchBar from '../components/SearchBar';
+// import SubjectData from "../Data.json";
 function SubjectDetailsPage(props) {
     const [subject, setSubject] = useState(null);
     const { id } = useParams();
     const subjectId = id;
+    const [searchTerm, SetSearchTerm] = useState('')
     console.log('ID:', id)
     const getSubject = async () => {
         localStorage.getItem('authToken');
@@ -40,7 +41,12 @@ function SubjectDetailsPage(props) {
             </nav> */}
         <div className="wrapper">
         <div className="firstCol">
-        <SearchBar data={SubjectData} />
+        {/* <SearchBar data={SubjectData} /> */}
+            <div>
+                <input type="text" placeholder="Search" onChange={event => {SetSearchTerm(event.target.value)}}/>
+            </div>
+            <br></br>
+            <img src={ad} alt="ad" />
         </div>
         <div className="secondCol">
         {subject && (
@@ -53,7 +59,13 @@ function SubjectDetailsPage(props) {
             )}
                     <div className="row">
             {subject &&
-                subject.sections.map((section) => {
+                subject.sections.filter((sectionSearched)=>{
+                if(searchTerm == "" ) {
+                    return sectionSearched
+                }else if(sectionSearched.title.toLowerCase().includes(searchTerm.toLowerCase())){
+                    return sectionSearched
+                }
+              }).map((section) => {
                     return <SectionCard key={section._id} {...section} />;
                 })}
             </div>

@@ -7,12 +7,10 @@ import ad from "../adAPIThieves.png";
 import AddExternalResource from '../components/AddExternalResource';
 import ProfileResourceCard from '../components/ProfileResourceCard';
 import { getProfileDetailsService } from '../services/profile.services';
-import SearchBar from '../components/SearchBar';
-import SubjectData from "../Data.json";
-
+// import SearchBar from '../components/SearchBar';
+// import SubjectData from "../Data.json";
 function ProfilePage(props) {
     const [profile, setProfile] = useState(null);
-
     const getProfile = async () => {
         localStorage.getItem('authToken');
         console.log("Render")
@@ -32,7 +30,9 @@ function ProfilePage(props) {
         <>
             <div className="wrapper">
                 <div className="firstCol">
-                    <SearchBar data={SubjectData} />
+                    {/* <SearchBar data={SubjectData} /> */}
+                    <br></br>
+                         <img src={ad} alt="ad" />
                 </div>
                 <div className="secondCol">
                     <br></br>
@@ -47,7 +47,6 @@ function ProfilePage(props) {
                                 </>
                             )
                         })}
-
                     {profile &&
                         profile.pendingExternal.map((pResource) => {
                             return (
