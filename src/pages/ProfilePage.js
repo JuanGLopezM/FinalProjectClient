@@ -69,4 +69,5 @@ function ProfilePage(props) {
         </>
     )
 }
+
 export default ProfilePage;
