@@ -4,7 +4,7 @@ import EditSubject from '../components/EditSubject';
 import { Link, useParams } from 'react-router-dom';
 import AddSection from '../components/AddSection';
 import SectionCard from '../components/SectionCard';
-import ad from "../adAPIThieves.png";
+import ad from "../adColaborator.png";
 // import SearchBar from '../components/SearchBar';
 // import SubjectData from "../Data.json";
 function SubjectDetailsPage(props) {

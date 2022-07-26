@@ -27,7 +27,7 @@ function AddExternalResource(props) {
         }
     };
     return (
-        <div className="AddResource">
+        <div>
             <h3>Add New Resource</h3>
             <form onSubmit={handleSubmit}>
                 <div class="form-row">
