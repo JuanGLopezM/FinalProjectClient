@@ -35,7 +35,10 @@ function ProfilePage(props) {
                     <SearchBar data={SubjectData} />
                 </div>
                 <div className="secondCol">
-                    <h3>Perfil</h3>
+                    <br></br>
+                    <br></br>
+                    <h3>List of materials:</h3>
+                    <br></br>
                     {profile &&
                         profile.pending.map((pResource) => {
                             return (
@@ -44,7 +47,7 @@ function ProfilePage(props) {
                                 </>
                             )
                         })}
-                    <hr></hr>
+
                     {profile &&
                         profile.pendingExternal.map((pResource) => {
                             return (
@@ -53,7 +56,8 @@ function ProfilePage(props) {
                                 </>
                             )
                         })}
-                    <AddExternalResource refreshUser={getProfile} />
+                        <hr></hr>
+                    <AddExternalResource getProfile={getProfile} />
                 </div>
                 <div class="thirdCol">
                     <br></br>

@@ -13,6 +13,7 @@ function ResourceCard({ title, tags, source, _id }) {
         <li class="list-group-item list-group-item-light font-weight-light">{inputTags}</li>
         <a href={inputSource} rel="noreferrer" target="_blank" class="list-group-item list-group-item-action">{inputSource}</a>
       </ul>
+      <br></br>
     </div>
   );
 }

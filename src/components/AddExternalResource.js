@@ -9,7 +9,7 @@ function AddExternalResource(props) {
     const [ tags, setTags ] = useState('');
     const [ source, setSource ] = useState('');
     // const {id}= useParams()
-   
+ 
     
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -21,7 +21,7 @@ function AddExternalResource(props) {
             setDescription('');
             setTags('');
             setSource('');
-            // props.refreshSection();
+            props.getProfile();
         } catch (err) {
             console.log(err);
         }

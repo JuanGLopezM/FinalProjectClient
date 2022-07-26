@@ -23,6 +23,7 @@ function AddSubject(props) {
     };
     return (
         <div >
+        <hr></hr>
         <h3>Add New Subject</h3>
         <form onSubmit={handleSubmit}>
           <div class="form-row">

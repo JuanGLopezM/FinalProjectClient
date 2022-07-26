@@ -9,7 +9,7 @@ function Navbar() {
   // eslint-disable-next-line
 
   return (
-    <nav class="nav navbar navbar-expand-lg  rounded colorNav">
+    <nav class="nav navbar navbar-expand-lg colorNav">
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           {isLoggedIn
