@@ -137,7 +137,8 @@ nav li {
 } */
 
 .colorNav{
-  background-color: rgba(4, 4, 26, 0.671)!important;
+  background-color: rgba(4, 4, 26)!important;
+  background-image: url("../src/B3.jpg");
 }
 
 .navbar-nav li a{
