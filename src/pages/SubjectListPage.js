@@ -15,7 +15,7 @@ function SubjectListPage() {
      const [ filter , setFilter ] = useState([]);
      const [searchTerm, SetSearchTerm] = useState('')
      const { user } = useContext(AuthContext);
-     console.log('user', user)
+     console.log('payload', user.payload)
     const getAllSubjects = async () => {
         // Send the token through the request "Authorization" Headers
         try {
@@ -67,7 +67,7 @@ function SubjectListPage() {
           <br></br>
           <br></br>
           <br></br>
-          {user.email === 'Admin@gmail.com'
+          {(user.email === 'Admin@gmail.com' || user.email === 'Admin2@gmail.com')
           ? (<AddSubject refreshSubjects={getAllSubjects} />)
           : (<></>)
           }

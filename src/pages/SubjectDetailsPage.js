@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { getSubjectDetailsService } from '../services/subject.services';
 import EditSubject from '../components/EditSubject';
 import { Link, useParams } from 'react-router-dom';
 import AddSection from '../components/AddSection';
 import SectionCard from '../components/SectionCard';
 import ad from "../adColaborator.png";
+import { AuthContext } from "./../context/auth.context";
 // import SearchBar from '../components/SearchBar';
 // import SubjectData from "../Data.json";
 function SubjectDetailsPage(props) {
@@ -13,6 +14,7 @@ function SubjectDetailsPage(props) {
     const subjectId = id;
     const [searchTerm, SetSearchTerm] = useState('')
     console.log('ID:', id)
+    const { user } = useContext(AuthContext);
     const getSubject = async () => {
         localStorage.getItem('authToken');
         try {
@@ -75,13 +77,18 @@ function SubjectDetailsPage(props) {
             <br></br>
             <br></br>
             <br></br>
-            <hr></hr>
-            <EditSubject setSubject={setSubject} refreshSubject={getSubject} SubjectId={subjectId} />
+            
+            {(user.email === 'Admin@gmail.com' || user.email === 'Admin2@gmail.com')
+            ? (<div><hr></hr><EditSubject setSubject={setSubject} refreshSubject={getSubject} SubjectId={subjectId} /></div>)
+            : (<></>)
+            } 
             <br></br>
             <br></br>
             <br></br>
-            <hr></hr>
-            <AddSection refreshSubject={getSubject} SubjectId={subjectId} />
+            {(user.email === 'Admin@gmail.com' || user.email === 'Admin2@gmail.com')
+            ? (<div><hr></hr><AddSection refreshSubject={getSubject} SubjectId={subjectId} /></div>)
+            : (<></>)
+            } 
             <br></br>
             <br></br>
             <Link to="/subjects">
