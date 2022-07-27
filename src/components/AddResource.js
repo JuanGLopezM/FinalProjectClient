@@ -36,9 +36,9 @@ function AddResource(props) {
           <div class="col">
               <input type="text" name="title" class="form-control" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} />
             </div>
-          <div class="col">
+          {/* <div class="col">
               <input type="text" name="tags" class="form-control" placeholder="Tags" value={tags} onChange={(e) => setTags(e.target.value)} />
-            </div>
+            </div> */}
             <div class="col">
               <input type="text"  name="source" class="form-control " placeholder="Source" value={source} onChange={(e) => setSource(e.target.value)} />
             </div>

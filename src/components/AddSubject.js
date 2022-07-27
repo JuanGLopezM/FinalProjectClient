@@ -33,9 +33,9 @@ function AddSubject(props) {
             <div class="col">
               <input type="text" name="description" class="form-control" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
             </div>
-            <div class="col">
+            {/* <div class="col">
               <input type="text" name="tags" class="form-control" placeholder="Tags" value={tags} onChange={(e) => setTags(e.target.value)} />
-            </div>
+            </div> */}
           </div>
           <button type="submit" class="btn btn-outline-info">Add</button>
         </form>

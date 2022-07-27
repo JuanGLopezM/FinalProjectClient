@@ -43,7 +43,7 @@ function EditSection({ setSection, SectionId, title, Tags, refreshSection }) {
                                     onChange={(e) => {setInputTitle(e.target.value); }}
                                 />
                             </div>
-                            <div class="col">
+                            {/* <div class="col">
                                 <input
                                     type="text"
                                     name="inputTags"
@@ -52,14 +52,13 @@ function EditSection({ setSection, SectionId, title, Tags, refreshSection }) {
                                     value={inputTags}
                                     onChange={(e) => { setInputTags(e.target.value);}}
                                 />
-                            </div>
+                            </div> */}
                         </div>
                         <button type="submit" class="btn btn-outline-success">Edit</button>
                     </form>
                 <button onClick={handleDeleteSection} class="btn btn-outline-danger">Delete</button>
+                </div>)}
                 </div>
-            )}
-        </div>
     );
 }
 export default EditSection;

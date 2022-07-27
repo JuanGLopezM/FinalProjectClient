@@ -47,7 +47,7 @@ function SectionDetailsPage(props) {
                         <br></br>
                         <br></br>
                         <h1><b>{section.title}</b></h1>
-                        <h5><b>Tags:</b> {section.tags}</h5>
+                        {/* <h5><b>Tags:</b> {section.tags}</h5> */}
                         {/* <p>Resources: {subject.resources}</p> */}
                         <br></br>
                     </div>
@@ -63,13 +63,13 @@ function SectionDetailsPage(props) {
                         return <ResourceCard key={resource._id} {...resource} />;
                     })}
                 <br></br>
-                {(user.email === 'Admin@gmail.com' || user.email === 'Admin2@gmail.com')
+                {(user.email === 'Admin@gmail.com')
                     ? (<div><hr></hr><EditSection setSection={setSection} SectionId={sectionId} refreshSection={getSection} /></div>)
                     : (<></>)
                 }
                 <br></br>
                 <br></br>
-                {(user.email === 'Admin@gmail.com' || user.email === 'Admin2@gmail.com')
+                {(user.email === 'Admin@gmail.com')
                     ? (<div><hr></hr><AddResource refreshSection={getSection} SectionId={sectionId} />
                         <br></br>
                         <br></br>

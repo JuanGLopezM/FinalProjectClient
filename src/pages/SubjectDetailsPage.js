@@ -57,7 +57,7 @@ function SubjectDetailsPage(props) {
                 <br></br>
                     <h1><b>{subject.title}</b></h1>
                     <h5><b>Description:</b> {subject.description}</h5>
-                    <h5><b>Tags:</b> {subject.tags}</h5>
+                    {/* <h5><b>Tags:</b> {subject.tags}</h5> */}
                     {/* <p>Resources: {subject.resources}</p> */}
                     <br></br>
                 </div>
@@ -78,14 +78,14 @@ function SubjectDetailsPage(props) {
             <br></br>
             <br></br>
             
-            {(user.email === 'Admin@gmail.com' || user.email === 'Admin2@gmail.com')
+            {(user.email === 'Admin@gmail.com')
             ? (<div><hr></hr><EditSubject setSubject={setSubject} refreshSubject={getSubject} SubjectId={subjectId} /></div>)
             : (<></>)
             } 
             <br></br>
             <br></br>
             <br></br>
-            {(user.email === 'Admin@gmail.com' || user.email === 'Admin2@gmail.com')
+            {(user.email === 'Admin@gmail.com')
             ? (<div><hr></hr><AddSection refreshSubject={getSubject} SubjectId={subjectId} /></div>)
             : (<></>)
             } 

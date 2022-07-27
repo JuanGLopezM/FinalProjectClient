@@ -6,6 +6,7 @@ import { Link, useParams } from 'react-router-dom';
 import ad from "../adAPIThieves.png";
 import AddExternalResource from '../components/AddExternalResource';
 import ProfileResourceCard from '../components/ProfileResourceCard';
+import ResourceCard from '../components/ResourceCard';
 import { getProfileDetailsService } from '../services/profile.services';
 // import SearchBar from '../components/SearchBar';
 // import SubjectData from "../Data.json";
@@ -32,6 +33,9 @@ function ProfilePage(props) {
                 <div className="firstCol">
                     {/* <SearchBar data={SubjectData} /> */}
                     <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
                          <img src={ad} alt="ad" />
                 </div>
                 <div className="secondCol">
@@ -45,7 +49,7 @@ function ProfilePage(props) {
                         profile.pending.map((pResource) => {
                             return (
                                 <>
-                                    <ProfileResourceCard key={pResource._id} {...pResource} getProfile={getProfile} />
+                                    <ResourceCard key={pResource._id} {...pResource} getProfile={getProfile} />
                                 </>
                             )
                         })}

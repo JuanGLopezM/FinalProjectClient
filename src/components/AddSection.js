@@ -37,9 +37,9 @@ function AddSection(props) {
             <div class="col">
               <input type="text"  name="title" class="form-control " placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} />
             </div>
-            <div class="col">
+            {/* <div class="col">
               <input type="text" name="tags" class="form-control" placeholder="Tags" value={tags} onChange={(e) => setTags(e.target.value)} />
-            </div>
+            </div> */}
           </div>
           <button type="submit" class="btn btn-outline-info">Add</button>
         </form>

@@ -42,9 +42,9 @@ function EditSubject({ setSubject, SubjectId, title, description, Tags, refreshS
                     <div class="col">
                         <input  type="text" name="inputDescription" class="form-control" placeholder="Description"  value={inputDescription} onChange={(e) => { setInputDescription(e.target.value); }} />
                     </div>
-                    <div class="col">
+                    {/* <div class="col">
                         <input type="text" name="inputTags" class="form-control" placeholder="Tags" value={inputTags} onChange={(e) => { setInputTags(e.target.value); }} />
-                    </div>
+                    </div> */}
                 </div>
                 <button type="submit" class="btn btn-outline-success">Edit</button>
                 </form>

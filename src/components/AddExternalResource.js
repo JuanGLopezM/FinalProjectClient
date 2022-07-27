@@ -37,9 +37,9 @@ function AddExternalResource(props) {
                     <div class="col">
                         <input type="text" name="description" class="form-control" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
                     </div>
-                    <div class="col">
+                    {/* <div class="col">
                         <input type="text" name="tags" class="form-control" placeholder="Tags" value={tags} onChange={(e) => setTags(e.target.value)} />
-                    </div>
+                    </div> */}
                     <div class="col">
                         <input type="text"  name="source" class="form-control " placeholder="Source" value={source} onChange={(e) => setSource(e.target.value)} />
                     </div>

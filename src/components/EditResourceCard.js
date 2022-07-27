@@ -53,7 +53,7 @@ function EditResourceCard({ title, tags, source, _id }) {
                         onChange={(e) => {setInputTitle(e.target.value); }}
                     />
                     </div>
-                    <div class="col">
+                    {/* <div class="col">
                     <input
                         type="text"
                         name="inputTags"
@@ -62,7 +62,7 @@ function EditResourceCard({ title, tags, source, _id }) {
                         value={inputTags}
                         onChange={(e) => {setInputTags(e.target.value);}}
                     />
-                    </div>
+                    </div> */}
                     <div class="col">
                     <input
                         type="text"
@@ -75,9 +75,9 @@ function EditResourceCard({ title, tags, source, _id }) {
                     </div>
                   </div>
                     <button type="submit" class="btn btn-outline-success">Edit</button>
+                    <button onClick={handleDeleteResource} class="btn btn-outline-danger">Delete</button>
+                  <button onClick={handleAddFavorite} class="btn btn-outline-primary">Add to Profile</button>
                 </form>
-                  <button onClick={handleDeleteResource} class="btn btn-outline-danger">Delete from DB</button>
-                  <button onClick={handleAddFavorite} class="btn btn-outline-primary">Add favorite</button>
               </div>
             )}
         <br></br>

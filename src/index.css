@@ -96,7 +96,6 @@ nav li {
   width:70em;
   }
 .circulo{
-  background-color: rgba(4, 4, 26, 0.651);
   width: 250px;
   height: 250px;
   border-radius: 50%;
@@ -322,9 +321,9 @@ input[type=text]:placeholder {
   animation-duration:1s;
 }
 .fadeIn.first {
-  -webkit-animation-delay: 0.4s;
-  -moz-animation-delay: 0.4s;
-  animation-delay: 0.4s;
+  -webkit-animation-delay: 0.2s;
+  -moz-animation-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 .fadeIn.second {
   -webkit-animation-delay: 0.6s;
@@ -376,4 +375,17 @@ input[type=text]:placeholder {
 }
 .heading{
   text-align: left;
+}
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
