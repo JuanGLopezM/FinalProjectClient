@@ -9,7 +9,7 @@ import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import PrivateRoute from './components/PrivateRoute';
 import AnonRoute from './components/AnonRoute';
-import background from "./05.jpg";
+import background from "./05b.jpg";
 import ProfilePage from './pages/ProfilePage';
 // eslint-disable-next-line
 import SearchBar from './components/SearchBar';
