@@ -37,7 +37,9 @@ function ProfilePage(props) {
                 <div className="secondCol">
                     <br></br>
                     <br></br>
-                    <h3>List of materials:</h3>
+                    <div className="heading">
+                    <h3><b>List of materials:</b></h3>
+                    </div>
                     <br></br>
                     {profile &&
                         profile.pending.map((pResource) => {

@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import React from "react";
+import { AuthContext } from "./../context/auth.context";
 import AddSubject from '../components/AddSubject';
 import SubjectCard from '../components/SubjectCard';
 import { getAllSubjectsService } from '../services/subject.services';
@@ -13,6 +14,8 @@ function SubjectListPage() {
      // eslint-disable-next-line
      const [ filter , setFilter ] = useState([]);
      const [searchTerm, SetSearchTerm] = useState('')
+     const { user } = useContext(AuthContext);
+     console.log('user', user)
     const getAllSubjects = async () => {
         // Send the token through the request "Authorization" Headers
         try {
@@ -42,10 +45,10 @@ function SubjectListPage() {
           <div className="secondCol">
           <br></br>
           <br></br>
-          <br></br>
-          <img src={whatLogo} alt="Logo" />
-          <br></br>
-          <br></br>
+          <div className="heading">
+          <h1><b>What do you want to learn today?</b></h1>
+          </div>
+          {/* <img src={whatLogo} alt="Logo" /> */}
           <br></br>
           <br></br>
           <div className="row">
@@ -64,7 +67,10 @@ function SubjectListPage() {
           <br></br>
           <br></br>
           <br></br>
-          <AddSubject refreshSubjects={getAllSubjects} />
+          {user.email === 'Admin@gmail.com'
+          ? (<AddSubject refreshSubjects={getAllSubjects} />)
+          : (<></>)
+          }
           </div>
           <div class="thirdCol">
             <br></br>

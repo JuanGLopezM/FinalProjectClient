@@ -25,29 +25,23 @@ function SignupPage(props) {
     }
   };
     return (
-        <>
+      <>
+      <div className="wrapper2 wrapper3 fadeInDown">
+      <br></br>
+        <div id="formContent" className="loginCol">
         <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <div className="wrapper wrapper3 fadeInDown">
-        <br></br>
-          <div id="formContent" className="loginCol">
-          <br></br>
-            <h1>Sign Up</h1>
-            <form onSubmit={handleSignupSubmit}>
-                <input type="text" id="login" className="fadeIn first" name="name" placeholder="Name" value={name} onChange={handleName} />
-                <input type="text" id="login" className="fadeIn second" name="email" placeholder="Email" value={email} onChange={handleEmail} />
-                <input type="password" id="password" className="fadeIn third" name="password" placeholder="Password" value={password} onChange={handlePassword} />
-                <input type="submit" className="fadeIn fourth" value="Signup" />
-            </form>
-            {errorMessage && <p className="error-message">{errorMessage}</p>}
-            <p id="formFooter">Already have an account?<Link to={'/login'}> Log In</Link></p>
-          </div>
+          <h1>Sign Up</h1>
+          <form onSubmit={handleSignupSubmit}>
+              <input type="text" id="login" className="fadeIn first" name="name" placeholder="Name" value={name} onChange={handleName} />
+              <input type="text" id="login" className="fadeIn second" name="email" placeholder="Email" value={email} onChange={handleEmail} />
+              <input type="password" id="password" className="fadeIn third" name="password" placeholder="Password" value={password} onChange={handlePassword} />
+              <input type="submit" className="fadeIn fourth" value="Signup" />
+          </form>
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
+          <p id="formFooter">Already have an account?<Link to={'/login'}> Log In</Link></p>
         </div>
-        </>
+      </div>
+      </>
     );
 }
 export default SignupPage;

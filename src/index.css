@@ -123,8 +123,8 @@ nav li {
   color: rgb(243, 243, 243)!important;
 }
 .navBarLogo{
-  left: 24%;
-  position: relative;
+  left: 42.5%;
+  position: absolute;
 }
 .wrapper{
   display: grid;
@@ -373,4 +373,7 @@ input[type=text]:placeholder {
 .loginCol{
   grid-column: 3;
   grid-row: 1/3;
+}
+.heading{
+  text-align: left;
 }

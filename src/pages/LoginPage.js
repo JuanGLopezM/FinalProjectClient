@@ -26,13 +26,7 @@ function LoginPage(props) {
     };
     return (
         <>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <div className="wrapper wrapper3 fadeInDown">
+        <div className="wrapper2 wrapper3 fadeInDown">
         <br></br>
           <div id="formContent" className="loginCol">
           <br></br>

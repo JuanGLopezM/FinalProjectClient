@@ -41,10 +41,13 @@ function SectionDetailsPage(props) {
         </div>
         <div className="secondCol">
             {section && (
-                <div className="ResourceCard card">
-                    <h1>{section.title}</h1>
-                 <p>Tags: {section.tags}</p>
+                <div className="heading">
+                <br></br>
+                <br></br>
+                    <h1><b>{section.title}</b></h1>
+                    <h5><b>Tags:</b> {section.tags}</h5>
                     {/* <p>Resources: {subject.resources}</p> */}
+                    <br></br>
                 </div>
             )}
             {section &&

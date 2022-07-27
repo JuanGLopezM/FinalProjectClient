@@ -17,7 +17,7 @@ import SearchBar from './components/SearchBar';
 function App() {
     return (
         <div style={{ backgroundImage: `url(${background})`,
-        backgroundRepeat: 'no-repeat', backgroundSize: "cover", backgroundAttachment: "fixed"}}>
+        backgroundRepeat: 'no-repeat', backgroundSize: "cover", minHeight:"940px", backgroundAttachment: "fixed"}}>
         <div className="App">
             <Navbar />
             {/* <SearchBar placeholder="Enter the Subject" data={SubjectData}/> */}

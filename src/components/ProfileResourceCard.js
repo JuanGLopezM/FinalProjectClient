@@ -28,7 +28,7 @@ function ProfileResourceCard({ title, description, tags, source, _id, getProfile
   return (
     <div>
       <ul class="list-group">
-        <li class="list-group-item list-group-item-info font-weight-bold">{inputTitle}</li>
+        <li class="list-group-item list-group-item-warning font-weight-bold">{inputTitle}</li>
         <li class="list-group-item list-group-item-light font-weight-light">{inputDescription}</li>
         <li class="list-group-item list-group-item-light font-weight-light">{inputTags}</li>
         <a href={inputSource} rel="noreferrer" target="_blank" class="list-group-item list-group-item-action">{inputSource}</a>

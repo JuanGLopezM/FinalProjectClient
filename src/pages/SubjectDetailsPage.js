@@ -50,11 +50,14 @@ function SubjectDetailsPage(props) {
         </div>
         <div className="secondCol">
         {subject && (
-                <div className="ResourceCard card">
-                    <h1>{subject.title}</h1>
-                    <p>Description: {subject.description}</p>
-                    <p>Tags: {subject.tags}</p>
+                <div className="heading">
+                <br></br>
+                <br></br>
+                    <h1><b>{subject.title}</b></h1>
+                    <h5><b>Description:</b> {subject.description}</h5>
+                    <h5><b>Tags:</b> {subject.tags}</h5>
                     {/* <p>Resources: {subject.resources}</p> */}
+                    <br></br>
                 </div>
             )}
                     <div className="row">
