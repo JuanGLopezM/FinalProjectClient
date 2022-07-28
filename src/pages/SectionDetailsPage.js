@@ -49,7 +49,7 @@ function SectionDetailsPage(props) {
                 )}
                 {section &&
                     section.resources.filter((resourceSearched) => {
-                        if (searchTerm == "") {
+                        if (searchTerm === "") {
                             return resourceSearched
                         } else if (resourceSearched.title.toLowerCase().includes(searchTerm.toLowerCase())) {
                             return resourceSearched
@@ -59,13 +59,13 @@ function SectionDetailsPage(props) {
                     })}
                 <br></br>
                 {(user.email === 'Admin@gmail.com')
-                    ?(<div><hr></hr><EditSection setSection={setSection} SectionId={sectionId} refreshSection={getSection} /></div>)
-                    :(<></>)
+                    ? (<div><hr></hr><EditSection setSection={setSection} SectionId={sectionId} refreshSection={getSection} /></div>)
+                    : (<></>)
                 }
                 <br></br>
                 <br></br>
                 {(user.email === 'Admin@gmail.com')
-                    ?(<div><hr></hr><AddResource refreshSection={getSection} SectionId={sectionId} />
+                    ? (<div><hr></hr><AddResource refreshSection={getSection} SectionId={sectionId} />
                         <br></br>
                         <br></br>
                         <h3>Edit/Delete Resource</h3>
@@ -74,7 +74,7 @@ function SectionDetailsPage(props) {
                                 return <EditResourceCard key={resource._id} {...resource} />;
                             })}
                     </div>)
-                    :(<></>)
+                    : (<></>)
                 }
                 <br></br>
                 <br></br>

@@ -8,9 +8,9 @@ function HomePage() {
   }
   return (
     <div>
-      <button onClick={handleState}   class="btn btn-outline-info">{first? "Backend" : "Front-end"}</button>
+      <button onClick={handleState} class="btn btn-outline-info">{first ? "Backend" : "Front-end"}</button>
       <br></br>
-      <img src={first? front : back} alt='front' className="road rounded" />
+      <img src={first ? front : back} alt='front' className="road rounded" />
     </div>
   );
 }

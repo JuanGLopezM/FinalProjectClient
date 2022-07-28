@@ -25,12 +25,12 @@ function SubjectDetailsPage(props) {
         getSubject();
         // eslint-disable-next-line
     }, []);
-    return(
+    return (
         <>
             <div className="wrapper">
                 <div className="firstCol">
                     <div>
-                        <input type="text" placeholder="Search" onChange={event => {SetSearchTerm(event.target.value)}}/>
+                        <input type="text" placeholder="Search" onChange={event => { SetSearchTerm(event.target.value) }} />
                     </div>
                     <br></br>
                     <a href="https://google.com" target="_blank" rel="noreferrer">
@@ -39,19 +39,19 @@ function SubjectDetailsPage(props) {
                 </div>
                 <div className="secondCol">
                     {subject && (
-                    <div className="heading">
-                    <br></br>
-                    <br></br>
-                        <h1><b>{subject.title}</b></h1>
-                        <h5><b>Description:</b> {subject.description}</h5>
-                        <br></br>
-                    </div>
+                        <div className="heading">
+                            <br></br>
+                            <br></br>
+                            <h1><b>{subject.title}</b></h1>
+                            <h5><b>Description:</b> {subject.description}</h5>
+                            <br></br>
+                        </div>
                     )}
                     <div className="row">
-                        {subject && subject.sections.filter((sectionSearched)=>{
-                            if(searchTerm == "" ) {
+                        {subject && subject.sections.filter((sectionSearched) => {
+                            if (searchTerm === "") {
                                 return sectionSearched
-                            }else if(sectionSearched.title.toLowerCase().includes(searchTerm.toLowerCase())){
+                            } else if (sectionSearched.title.toLowerCase().includes(searchTerm.toLowerCase())) {
                                 return sectionSearched
                             }
                         }).map((section) => {
@@ -62,15 +62,15 @@ function SubjectDetailsPage(props) {
                     <br></br>
                     <br></br>
                     {(user.email === 'Admin@gmail.com')
-                        ?(<div><hr></hr><EditSubject setSubject={setSubject} refreshSubject={getSubject} SubjectId={subjectId} /></div>)
-                        :(<></>)
+                        ? (<div><hr></hr><EditSubject setSubject={setSubject} refreshSubject={getSubject} SubjectId={subjectId} /></div>)
+                        : (<></>)
                     }
                     <br></br>
                     <br></br>
                     <br></br>
                     {(user.email === 'Admin@gmail.com')
-                        ?(<div><hr></hr><AddSection refreshSubject={getSubject} SubjectId={subjectId} /></div>)
-                        :(<></>)
+                        ? (<div><hr></hr><AddSection refreshSubject={getSubject} SubjectId={subjectId} /></div>)
+                        : (<></>)
                     }
                     <br></br>
                     <br></br>

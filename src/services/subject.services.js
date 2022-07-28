@@ -15,7 +15,7 @@ const addNewSubjectService = (newSubject) => {
 
 //update resource
 const updateSubjectService = (id, updatedSubject) => {
-    return service.put(`${URL}/${id}`, updatedSubject);
+	return service.put(`${URL}/${id}`, updatedSubject);
 };
 
 //delete resource

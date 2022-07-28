@@ -1,13 +1,10 @@
-// eslint-disable-next-line
-import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "./../context/auth.context";
 import CodeInLogo from "../CodeInLogo3.png";
 function Navbar() {
   // eslint-disable-next-line
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
-  // eslint-disable-next-line
-
+ 
   return (
     <nav class="nav navbar navbar-expand-lg colorNav">
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -37,7 +34,6 @@ function Navbar() {
             ? (<>
               <li class="nav-item ">
               <button class="btn btn-outline-info" onClick={logOutUser}>Logout</button>
-                {/* <a class="nav-link" href={logOutUser}>Logout </a> */}
               </li>
             </>):
             (<>
@@ -49,17 +45,7 @@ function Navbar() {
               </li>
             </>)
           }
-          {/* <form class="form-inline my-2 my-lg-0 navbar-right ml-auto">
-        <input class="form-control mr-sm-2 navbar-right" type="search" placeholder="Search" aria-label="Search" />
-        <button class="btn btn-outline-success my-2 my-sm-0 navbar-right" type="submit">Search</button>
-      </form> */}
         </ul>
-        {/* <ul className="nav navBarLogo ">
-        <li>
-        <img src={CodeInLogo} alt="Logo" />
-        </li>
-        </ul> */}
-      {/* <SearchBar data={SubjectData} /> */}
       </div>
     </nav>
   )

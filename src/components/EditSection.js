@@ -3,6 +3,7 @@ import { updateSectionService, deleteSectionService } from '../services/section.
 import { useNavigate } from 'react-router-dom'
 function EditSection({ setSection, SectionId, title, Tags, refreshSection }) {
     const [inputTitle, setInputTitle] = useState(title);
+    // eslint-disable-next-line
     const [inputTags, setInputTags] = useState('');
     const [isDeleted, setIsDeleted] = useState(false);
     const redirect = useNavigate()
@@ -14,7 +15,6 @@ function EditSection({ setSection, SectionId, title, Tags, refreshSection }) {
             refreshSection()
         } catch (err) {
             console.log(err);
-            console.log('Holi')
         }
     };
     const handleDeleteSection = async (e) => {
@@ -40,25 +40,15 @@ function EditSection({ setSection, SectionId, title, Tags, refreshSection }) {
                                     class="form-control"
                                     placeholder="Title"
                                     value={inputTitle}
-                                    onChange={(e) => {setInputTitle(e.target.value); }}
+                                    onChange={(e) => { setInputTitle(e.target.value); }}
                                 />
                             </div>
-                            {/* <div class="col">
-                                <input
-                                    type="text"
-                                    name="inputTags"
-                                    class="form-control"
-                                    placeholder="Tags"
-                                    value={inputTags}
-                                    onChange={(e) => { setInputTags(e.target.value);}}
-                                />
-                            </div> */}
                         </div>
                         <button type="submit" class="btn btn-outline-success">Edit</button>
                     </form>
-                <button onClick={handleDeleteSection} class="btn btn-outline-danger">Delete</button>
+                    <button onClick={handleDeleteSection} class="btn btn-outline-danger">Delete</button>
                 </div>)}
-                </div>
+        </div>
     );
 }
 export default EditSection;

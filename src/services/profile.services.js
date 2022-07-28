@@ -2,27 +2,17 @@ import service from './service';
 
 const URL = '/profile';
 
-//add new favorite
+//Add to profile
 const addNewProfileService = (newFavorite) => {
-	return service.post(`${URL}`, newFavorite);
+    return service.post(`${URL}`, newFavorite);
 };
-
+//Return all resources in profile
 const getProfileDetailsService = () => {
     return service.get(`${URL}`);
 };
-
+//Delete a resource in profile
 const deleteProfileDetailsService = (id) => {
     return service.delete(`${URL}/${id}`);
 };
-
-//delete resource
-// const deleteResourceService = (id) => {
-// 	return service.delete(`${URL}/${id}`);
-// };
-
-//update resource
-// const updateResourceService = (id, updatedResource) => {
-// 	return service.put(`${URL}/${id}`, updatedResource);
-// };
 
 export { addNewProfileService, getProfileDetailsService, deleteProfileDetailsService };
