@@ -10,7 +10,7 @@ Useful info:
 - Watch out for the requirements on the password in order to register/login.
 - In order to enjoy the full app experience you need an Admin user (regular user won't allow you to edit/delete some of the content). 
 
-* Important *
+### Important 
 The main objective of the App is the permanent growth in materials provided by the content of the users upload, so feel free to add good stuff to your profile. The best content will be added to the permanent database by our admins and will be available to other users.
 
 
