@@ -4,20 +4,16 @@ import { AuthContext } from "./../context/auth.context";
 import AddSubject from '../components/AddSubject';
 import SubjectCard from '../components/SubjectCard';
 import { getAllSubjectsService } from '../services/subject.services';
-// import SearchBar from '../components/SearchBar';
-// import SubjectData from "../Data.json";
-import whatLogo from "../whatLogo.png";
 import ad from "../adAPIThieves.png";
+
 function SubjectListPage() {
     const [ subjects, setSubjects ] = useState([]);
     const [ loading, setLoading ] = useState(true);
-     // eslint-disable-next-line
-     const [ filter , setFilter ] = useState([]);
-     const [searchTerm, SetSearchTerm] = useState('')
-     const { user } = useContext(AuthContext);
-     console.log('payload', user.payload)
+    // eslint-disable-next-line
+    const [ filter , setFilter ] = useState([]);
+    const [searchTerm, SetSearchTerm] = useState('')
+    const { user } = useContext(AuthContext);
     const getAllSubjects = async () => {
-        // Send the token through the request "Authorization" Headers
         try {
             const response = await getAllSubjectsService();
             setSubjects(response.data);
@@ -27,59 +23,59 @@ function SubjectListPage() {
             console.log(err);
         }
     };
-    // We set this effect will run only once, after the initial render
-    // by setting the empty dependency array - []
     useEffect(() => {
         getAllSubjects();
     }, []);
     return (
-          <div className="wrapper">
-          <div className="firstCol">
-          {/* <SearchBar data={SubjectData} /> */}
-            <div>
-                <input type="text" placeholder="Search" onChange={event => {SetSearchTerm(event.target.value)}}/>
-            </div>
-            <br></br>
-            <img src={ad} alt="ad" />
-          </div>
-          <div className="secondCol">
-          <br></br>
-          <br></br>
-          <div className="heading">
-          <h1><b>What do you want to learn today?</b></h1>
-          </div>
-          {/* <img src={whatLogo} alt="Logo" /> */}
-          <br></br>
-          <br></br>
-          <div className="row">
-              {loading && <div>Loading...</div>}
-              { !loading && subjects.filter((subjectSearched)=>{
-                if(searchTerm == "" ) {
-                    return subjectSearched
-                }else if(subjectSearched.title.toLowerCase().includes(searchTerm.toLowerCase())){
-                    return subjectSearched
+            <div className="wrapper">
+                <div className="firstCol">
+                    <div>
+                        <input type="text" placeholder="Search" onChange={event => {SetSearchTerm(event.target.value)}}/>
+                    </div>
+                    <br></br>
+                    <a href="https://google.com" target="_blank" rel="noreferrer">
+                        <img src={ad} alt="ad" />
+                    </a>
+                </div>
+                <div className="secondCol">
+                <br></br>
+                <br></br>
+                    <div className="heading">
+                        <h1><b>What do you want to learn today?</b></h1>
+                    </div>
+                <br></br>
+                <br></br>
+                    <div className="row">
+                        {loading && <div>Loading...</div>}
+                        { !loading && subjects.filter((subjectSearched)=>{
+                            if(searchTerm == "" ) {
+                                return subjectSearched
+                            }else if(subjectSearched.title.toLowerCase().includes(searchTerm.toLowerCase())){
+                                return subjectSearched
+                            }
+                        }).map((subject) => {
+                            return <SubjectCard key={subject._id} {...subject} />
+                        }
+                        )}
+                    </div>
+                <br></br>
+                <br></br>
+                <br></br>
+                {(user.email === 'Admin@gmail.com')
+                    ?(<AddSubject refreshSubjects={getAllSubjects} />)
+                    :(<></>)
                 }
-              }).map((subject) => {
-                return <SubjectCard key={subject._id} {...subject} />
-              }
-              )}
-          </div>
-          <br></br>
-          <br></br>
-          <br></br>
-          {(user.email === 'Admin@gmail.com' || user.email === 'Admin2@gmail.com')
-          ? (<AddSubject refreshSubjects={getAllSubjects} />)
-          : (<></>)
-          }
-          </div>
-          <div class="thirdCol">
+            </div>
+            <div class="thirdCol">
             <br></br>
             <br></br>
             <br></br>
             <br></br>
-          <img src={ad} alt="ad" />
-          </div>
-          </div>
+                <a href="https://google.com" target="_blank" rel="noreferrer">
+                    <img src={ad} alt="ad" />
+                </a>
+            </div>
+        </div>
     );
 }
 export default SubjectListPage;

@@ -1,23 +1,16 @@
-// eslint-disable-next-line
-import { Divider } from '@mui/material';
 import { useState, useEffect } from 'react';
-// eslint-disable-next-line
-import { Link, useParams } from 'react-router-dom';
 import ad from "../adAPIThieves.png";
 import AddExternalResource from '../components/AddExternalResource';
 import ProfileResourceCard from '../components/ProfileResourceCard';
-import ResourceCard from '../components/ResourceCard';
+import ResourceCard2 from '../components/ResourceCard2';
 import { getProfileDetailsService } from '../services/profile.services';
-// import SearchBar from '../components/SearchBar';
-// import SubjectData from "../Data.json";
+
 function ProfilePage(props) {
     const [profile, setProfile] = useState(null);
     const getProfile = async () => {
         localStorage.getItem('authToken');
-        console.log("Render")
         try {
             const response = await getProfileDetailsService();
-            console.log(response)
             setProfile(response.data);
         } catch (err) {
             console.log(err);
@@ -31,25 +24,26 @@ function ProfilePage(props) {
         <>
             <div className="wrapper">
                 <div className="firstCol">
-                    {/* <SearchBar data={SubjectData} /> */}
                     <br></br>
                     <br></br>
                     <br></br>
                     <br></br>
-                         <img src={ad} alt="ad" />
+                    <a href="https://google.com" target="_blank" rel="noreferrer">
+                        <img src={ad} alt="ad" />
+                    </a>
                 </div>
                 <div className="secondCol">
                     <br></br>
                     <br></br>
                     <div className="heading">
-                    <h3><b>List of materials:</b></h3>
+                        <h3><b>List of materials:</b></h3>
                     </div>
                     <br></br>
                     {profile &&
                         profile.pending.map((pResource) => {
                             return (
                                 <>
-                                    <ResourceCard key={pResource._id} {...pResource} getProfile={getProfile} />
+                                    <ResourceCard2 key={pResource._id} {...pResource} getProfile={getProfile} />
                                 </>
                             )
                         })}
@@ -61,7 +55,7 @@ function ProfilePage(props) {
                                 </>
                             )
                         })}
-                        <hr></hr>
+                    <hr></hr>
                     <AddExternalResource getProfile={getProfile} />
                 </div>
                 <div class="thirdCol">
@@ -69,7 +63,9 @@ function ProfilePage(props) {
                     <br></br>
                     <br></br>
                     <br></br>
-                    <img src={ad} alt="ad" />
+                    <a href="https://google.com" target="_blank" rel="noreferrer">
+                        <img src={ad} alt="ad" />
+                    </a>
                 </div>
             </div>
         </>

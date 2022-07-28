@@ -1,7 +1,7 @@
 import React, { useState , useContext } from 'react';
 import { AuthContext } from "./../context/auth.context";
-import { addNewProfileService } from '../services/profile.services';
 import { updateResourceService, deleteResourceService } from '../services/resources.services';
+
 function EditResourceCard({ title, tags, source, _id }) {
     const [ inputTitle, setInputTitle ] = useState(title);
     const [ inputTags, setInputTags ] = useState(tags);
@@ -9,7 +9,7 @@ function EditResourceCard({ title, tags, source, _id }) {
     const [ isDeleted, setIsDeleted ] = useState(false);
     const idResource = _id;
     const { user } = useContext(AuthContext);
-    console.log('USER:', user)
+    
     
     const handleEditResource = async (e) => {
         try {
@@ -27,15 +27,7 @@ function EditResourceCard({ title, tags, source, _id }) {
             console.log(err);
         }
     };
-    const handleAddFavorite = async (e) => {
-        try {
-            const requestBody = { user, idResource };
-            console.log('USER:', user)
-            await addNewProfileService(requestBody);
-        } catch (err) {
-            console.log(err);
-        }
-    };
+
 
     return (
         <div>
@@ -76,7 +68,6 @@ function EditResourceCard({ title, tags, source, _id }) {
                   </div>
                     <button type="submit" class="btn btn-outline-success">Edit</button>
                     <button onClick={handleDeleteResource} class="btn btn-outline-danger">Delete</button>
-                  <button onClick={handleAddFavorite} class="btn btn-outline-primary">Add to Profile</button>
                 </form>
               </div>
             )}

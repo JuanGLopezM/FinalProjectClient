@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState , useContext } from 'react';
 import YoutubeEmbed from "./YoutubeEmbed";
+import { AuthContext } from "./../context/auth.context";
+import { addNewProfileService } from '../services/profile.services';
 
 function ResourceCard({ title, tags, source, _id }) {
-
+  const { user } = useContext(AuthContext);
+  const idResource = _id;
   // eslint-disable-next-line
   const [ inputTitle, setInputTitle ] = useState(title);
   // eslint-disable-next-line
@@ -21,6 +24,16 @@ function ResourceCard({ title, tags, source, _id }) {
       }
     }
 
+    const handleAddFavorite = async (e) => {
+      try {
+          const requestBody = { user, idResource };
+          console.log('USER:', user)
+          await addNewProfileService(requestBody);
+      } catch (err) {
+          console.log(err);
+      }
+  };
+
   return (
     <div>
       <ul class="list-group">
@@ -32,6 +45,7 @@ function ResourceCard({ title, tags, source, _id }) {
         :(<li class="list-group-item list-group-item-light font-weight-light">{inputSource}</li>)
         } 
       </ul>
+      <button onClick={handleAddFavorite} class="btn btn-outline-primary">Add to Profile</button>
       <br></br>
     </div>
   );
