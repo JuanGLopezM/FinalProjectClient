@@ -37,7 +37,7 @@ function ResourceCard({ title, tags, source, _id, getProfile }) {
         <li class="list-group-item list-group-item-warning font-weight-bold">{inputTitle}</li>
         {(YT(inputSource, 'youtube'))
           ? (<li class="list-group-item list-group-item-light font-weight-light"> <YoutubeEmbed embedId={Beer(inputSource)} /> </li>)
-          : (<li class="list-group-item list-group-item-light font-weight-light">{inputSource}</li>)
+          : (<a href={inputSource} target="_blank" rel="noreferrer" class="list-group-item list-group-item-light font-weight-light">{inputSource}</a>)
         }
       </ul>
       <button onClick={handleDeleteFavorite} class="btn btn-outline-danger">Delete</button>
